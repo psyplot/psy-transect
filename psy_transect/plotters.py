@@ -1,6 +1,7 @@
 """plotters module of the psy-transect psyplot plugin
 """
 from typing import Dict, TYPE_CHECKING
+from functools import partial
 
 from matplotlib.axes import Axes
 from matplotlib import widgets
@@ -120,6 +121,11 @@ class TransectDataGrid(psyps.DataGrid):
         return self.data
 
 
+class VTransform(psypm.Transform):
+
+    connections = []
+
+
 class VerticalTransectPlotter(psyps.Simple2DPlotter):
 
     selectors: Dict[Axes, widgets.LassoSelector]
@@ -147,7 +153,7 @@ class VerticalTransectPlotter(psyps.Simple2DPlotter):
     def get_enhanced_attrs(self, arr, *args, **kwargs):
         return getattr(arr, "attrs", {})
 
-    def _update_transect(self, points):
+    def _update_transect(self, ax, points):
         """Update the transect for the given value."""
         self.update(**{self._transect_fmt: points})
 
@@ -162,7 +168,7 @@ class VerticalTransectPlotter(psyps.Simple2DPlotter):
             The matplotlib axes to connect to
         """
         selector = widgets.LassoSelector(
-            ax, self._update_transect, useblit=False,
+            ax, partial(self._update_transect, ax), useblit=False,
             lineprops=lineprops, **kwargs
         )
         self.selectors[ax] = selector
@@ -177,3 +183,17 @@ class VerticalTransectPlotter(psyps.Simple2DPlotter):
                 selector.line.remove()
             except (AttributeError, KeyError):
                 pass
+
+
+class VerticalMapTransectPlotter(VerticalTransectPlotter):
+
+    transform = VTransform("transform")
+
+    _rcparams_string = ["plotter.vmaptransect."]
+
+    def _update_transect(self, ax, points):
+        points = np.asarray(points)
+        transformed = self.transform.projection.transform_points(
+            ax.projection, points[:, 0], points[:, 1]
+        )
+        super()._update_transect(ax, transformed[:,:2])

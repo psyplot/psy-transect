@@ -26,6 +26,7 @@ from psy_simple.plugin import (
     validate_none,
     validate_str,
 )
+from psy_maps.plugin import rcParams as maps_rcParams
 import numpy as np
 
 
@@ -102,6 +103,9 @@ defaultParams = {
         None,
         validate_points,
         "The point coordinates of the transect",
+    ],
+    "plotter.vmaptransect.transform": maps_rcParams.defaultParams[
+        "plotter.maps.transform"
     ],
     "plotter.maptransect.transect": [
         None,
