@@ -211,6 +211,8 @@ def nearest_points(
 
     coord_names = [coord.name for coord in coords]
 
+    new_coord = np.arange(indices.size)
+
     for da in arrays:
         dims_to_keep = tuple(dim for dim in da.dims if dim not in coord_dims)
         nkeep = len(dims_to_keep)
@@ -225,6 +227,7 @@ def nearest_points(
             for key, val in da.coords.items()
             if set(val.dims) <= set(dims_to_keep)
         }
+        da_coords[cell_dim] = new_coord
 
         nkeep = len(dims_to_keep)
 
