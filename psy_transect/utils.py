@@ -6,6 +6,8 @@ import xarray as xr
 import numpy as np
 from sklearn.neighbors import BallTree
 
+import psyplot.data as psyd
+
 
 def unique_everseen(iterable, key=None):
     """List unique elements, preserving order. Remember all elements ever seen.
@@ -136,6 +138,16 @@ def get_distance_from_start(points: np.ndarray) -> np.ndarray:
     return dist
 
 
+def estimate_resolution(*coords):
+    """Estimate the minimum resolution in a grid."""
+    coords = xr.broadcast(*coords)
+    grid_points = np.concatenate(
+        [coord.values.reshape((-1, 1)) for coord in coords], -1
+    )
+    dist = np.abs(grid_points[1:] - grid_points[:-1])
+    return np.where(dist > 0, dist, np.inf).min(0)
+
+
 def nearest_points(
     points: np.ndarray,
     arrays: List[xr.DataArray],
@@ -173,46 +185,30 @@ def nearest_points(
         The given `arrays` at the location indicated by the given `points`
     """
 
-    def expand_segment(p0, p1):
-        N = int(np.max(np.ceil(np.abs(p1 - p0) / min_dist)))
-        return np.concatenate(
-            [np.linspace(a, b, N)[:, None] for a, b in zip(p0, p1)], -1
-        )
-
     grid_points = np.concatenate(
         [coord.values.reshape((-1, 1)) for coord in coords], -1
     )
     tree = BallTree(grid_points)
 
-    dist = np.abs(grid_points[1:] - grid_points[:-1])
-    min_dist = np.where(dist > 0, dist, np.inf).min(0)
+    query = tree.query(points, return_distance=False, sort_results=False)[:, 0]
     if not exact:
-        points = np.concatenate(
-            [expand_segment(p0, p1) for p0, p1 in zip(points, points[1:])], 0
-        )
-        indices = np.array(
-            list(
-                unique_everseen(
-                    tree.query(
-                        points, return_distance=False, sort_results=False
-                    )[:, 0]
-                )
-            )
-        )
+        indices = np.array(list(unique_everseen(query)))
+        selected_points = grid_points[indices]
     else:
-        indices = np.array(
-            list(
-                tree.query(points, return_distance=False, sort_results=False)[
-                    :, 0
-                ]
-            )
-        )
+        indices = np.array(list(query))
+        selected_points = points
 
     ret = []
 
     coord_names = [coord.name for coord in coords]
 
     new_coord = np.arange(indices.size)
+
+    distance = xr.Variable(
+        (cell_dim,),
+        get_distance_from_start(selected_points),
+        {"long_name": "Euclidean distance from the start of the transect"},
+    )
 
     for da in arrays:
         dims_to_keep = tuple(dim for dim in da.dims if dim not in coord_dims)
@@ -231,6 +227,8 @@ def nearest_points(
         da_coords[cell_dim] = new_coord
 
         nkeep = len(dims_to_keep)
+
+        da_coords[cell_dim + "_distance"] = distance
 
         new = xr.DataArray(
             cell_data,
@@ -313,6 +311,8 @@ def interpolate_points(
 
     interp = getattr(mesh, method)
 
+    new_coord = np.arange(len(points))
+
     for da in arrays:
         dims_to_keep = tuple(dim for dim in da.dims if dim not in coord_dims)
         nkeep = len(dims_to_keep)
@@ -333,6 +333,8 @@ def interpolate_points(
             for name, var in stacked.coords.items()
             if var.dims == ("__newdim",)
         }
+
+        da_coords[cell_dim] = new_coord
 
         da_coords[cell_dim + "_distance"] = (
             cell_dim,
@@ -368,8 +370,12 @@ def interpolate_points(
 def select_transect(
     points, ds, *coords, exact=False, cell_dim=None, method="nearest", **kws
 ):
+    def get_spatial_pos(da) -> int:
+        return min(
+            map(da.dims.index, chain.from_iterable(c.dims for c in coords))
+        )
 
-    npoints, ncoords = np.asarray(points).shape
+    ncoords = np.asarray(points).shape[1]
     if len(coords) != ncoords:
         raise ValueError(
             f"Number of coordinates ({len(coords)}) does not match"
@@ -391,7 +397,7 @@ def select_transect(
         )
         coords = xr.broadcast(*(list(coords) + [da]))[:-1]
     else:
-        coords = xr.broadcast(list(coords))
+        coords = xr.broadcast(*coords)
         coord_dims = set(coords[0].dims)
 
     if method == "nearest":
@@ -402,32 +408,18 @@ def select_transect(
         interpolated = interpolate_points(
             points, arrays, coords, coord_dims, cell_dim, method=method, **kws
         )
-    for da in interpolated:
-        # remove the old coordinates
-        if "coordinates" in da.encoding:
-            for coord in coords:
-                da.encoding["coordinates"] = da.encoding[
-                    "coordinates"
-                ].replace(coord.name, "")
-        if da.dims[-1] != cell_dim:
-            da = da.transpose(
-                *([d for d in da.dims if d != cell_dim] + [cell_dim])
-            )
+    for da, old in zip(interpolated, arrays):
+        # make sure that the transect dimension is at the position of the
+        # old spatial dimension
+        spatial_pos = get_spatial_pos(old)
+        if da.dims.index(cell_dim) != spatial_pos:
+            target_dims = [d for d in da.dims if d != cell_dim]
+            target_dims.insert(spatial_pos, cell_dim)
+            da = da.transpose(*target_dims)
         if da.name in ds.coords:
             ds.coords[da.name] = da
         else:
             ds[da.name] = da
-
-    # add the distance within the transect
-    # coord_names = [c.name for c in coords]
-    # new_points = np.dstack(
-    #     [c.values for name, c in ds.variables.items() if name in coord_names]
-    # )[0]
-    # ds[cell_dim + "_distance"] = (
-    #     "cell_dim",
-    #     get_distance_from_start(new_points),
-    #     {"long_name": "Euclidean distance from the start of the transect"},
-    # )
 
     return ds
 
@@ -448,7 +440,7 @@ def select_level(level, ds, coord, dim):
     arrays = [
         ds[key] for key in ds.variables if coord_dims <= set(ds[key].dims)
     ]
-    ds = ds.copy()
+    new_ds = ds.drop_dims(coord.dims).copy(deep=False)
 
     if arrays:
         da = arrays[0].isel(
@@ -460,11 +452,37 @@ def select_level(level, ds, coord, dim):
 
     for da in arrays:
         if da.name in ds.coords:
-            ds.coords[da.name] = da[selection]
+            new_ds.coords[da.name] = da[selection]
         else:
-            ds[da.name] = da[selection]
+            new_ds[da.name] = da[selection]
         remove_coordinates(da.attrs, [coord.name])
         remove_coordinates(da.encoding, [coord.name])
-    ds.coords[coord.name] = ((), level, coord.attrs)
+    new_ds.coords[coord.name] = ((), level, coord.attrs)
 
-    return ds
+    # now we check, whether the bounds of the selection is really within the
+    # coordinates
+
+    if coord.name not in coord.dims and coord.attrs.get("bounds") and arrays:
+        decoder = psyd.CFDecoder(new_ds)
+        coord_selected = coord[selection]
+
+        coord_bounds = decoder.get_cell_node_coord(
+            new_ds[arrays[0].name], coord=coord_selected
+        ).values
+        valid = (coord_bounds.min(axis=-1) <= level) & (
+            coord_bounds.max(axis=-1) >= level
+        )
+        mask = coord_selected.copy(data=valid.reshape(coord_selected.shape))
+        for da in arrays:
+            new_ds[da.name] = new_ds[da.name].where(mask)
+            new_ds[da.name].attrs = da.attrs
+            new_ds[da.name].encoding = da.encoding
+    elif arrays:
+        decoder = psyd.CFDecoder(ds)
+        bounds = decoder.get_plotbounds(coord)
+        if bounds.min() >= level or bounds.max() <= level:
+            for da in arrays:
+                if da.name not in ds.coords:
+                    new_ds[da.name] = new_ds[da.name].where(False)
+
+    return new_ds

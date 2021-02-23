@@ -24,7 +24,9 @@ from psy_simple.plugin import (
     validate_float,
     try_and_error,
     validate_none,
+    validate_bool,
     validate_str,
+    ValidateInStrings,
 )
 from psy_maps.plugin import rcParams as maps_rcParams
 import numpy as np
@@ -87,8 +89,61 @@ defaultParams = {
                 "module": "psy_transect.plotters",
                 "plotter_name": "VerticalTransectPlotter",
                 "plot_func": True,
+                "prefer_list": False,
+                "default_slice": 0,
+                "default_dims": {
+                    "z": slice(None),
+                    "x": slice(None),
+                    "y": slice(None),
+                },
+            },
+            "vertical_maptransect": {
+                "module": "psy_transect.plotters",
+                "plotter_name": "VerticalMapTransectPlotter",
+                "plot_func": True,
+                "prefer_list": False,
+                "default_slice": 0,
+                "default_dims": {
+                    "z": slice(None),
+                    "x": slice(None),
+                    "y": slice(None),
+                },
+            },
+            "horizontal_maptransect": {
+                "module": "psy_transect.maps",
+                "plotter_name": "HorizontalTransectFieldPlotter",
+                "plot_func": True,
+                "prefer_list": False,
+                "default_slice": 0,
+                "default_dims": {
+                    "z": slice(None),
+                    "x": slice(None),
+                    "y": slice(None),
+                },
+            },
+            "horizontal_mapvectortransect": {
+                "module": "psy_transect.maps",
+                "plotter_name": "HorizontalTransectVectorPlotter",
+                "plot_func": True,
+                "prefer_list": False,
+                "default_slice": 0,
+                "default_dims": {
+                    "z": slice(None),
+                    "x": slice(None),
+                    "y": slice(None),
+                },
+            },
+            "horizontal_mapcombinedtransect": {
+                "module": "psy_transect.maps",
+                "plotter_name": "HorizontalTransectCombinedPlotter",
+                "plot_func": True,
                 "prefer_list": True,
-                # ...
+                "default_slice": 0,
+                "default_dims": {
+                    "z": slice(None),
+                    "x": slice(None),
+                    "y": slice(None),
+                },
             },
         },
         dict,
@@ -99,10 +154,24 @@ defaultParams = {
         validate_str,
         "The method how to extract the transect from the data",
     ],
+    "plotter.transect.transect_resolution": [
+        'auto',
+        try_and_error(
+            validate_bool,
+            ValidateInStrings("transect_resolution", ["auto"], False),
+            validate_float,
+        ),
+        "Minimal resolution of the data used to expand the transect.",
+    ],
     "plotter.transect.transect": [
         None,
         validate_points,
         "The point coordinates of the transect",
+    ],
+    "plotter.transect.coord": [
+        "index",
+        ValidateInStrings("coord", ["index", "distance", "x", "y"], True),
+        "What to display on the x-axis",
     ],
     "plotter.vmaptransect.transform": maps_rcParams.defaultParams[
         "plotter.maps.transform"

@@ -137,9 +137,10 @@ class HorizontalTransectPlotterMixin:
         transect_val = self[self._transect_fmt]  # type: ignore
         if transect_val is not None:
             kwargs["valinit"] = transect_val
-        vmin, vmax = (
-            ax.get_ylim() if orientation == "vertical" else ax.get_xlim()
-        )
+        z = self.data.psy.get_coord("z")
+        vmin = z.min().values
+        vmax = z.max().values
+
         kwargs.setdefault("valmin", vmin)
         kwargs.setdefault("valmax", vmax)
 
