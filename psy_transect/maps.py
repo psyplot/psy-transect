@@ -29,15 +29,13 @@ class HorizontalTransect(Formatoption):
 
     name = "Transect within the raw data"
 
-    def initialize_plot(self, value):
-        if value is None:
-            raise ValueError("No transect specified")
-        super().initialize_plot(value)
-
     def update(self, value):
         data = self.data
 
         z = data.psy.get_coord("z")
+
+        if value is None:
+            value = z.min().values
 
         ds = data.psy.base.isel(**data.psy.idims)
 

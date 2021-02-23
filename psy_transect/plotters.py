@@ -173,6 +173,8 @@ class Transect(Formatoption):
     --------------
     list of x-y tuples
         The point coordinates of the transect.
+    None
+        Uses up to the first 100 cells
     """
 
     priority = START  # first phase for psyplot, data manipulation
@@ -183,11 +185,6 @@ class Transect(Formatoption):
 
     data_dependent = True
 
-    def initialize_plot(self, value):
-        if value is None:
-            raise ValueError("No transect specified")
-        super().initialize_plot(value)
-
     def update(self, value):
         data = self.data
 
@@ -195,6 +192,11 @@ class Transect(Formatoption):
         y = data.psy.get_coord("y")
 
         ds = data.psy.base.isel(**data.psy.idims)
+
+        if value is None:
+            value = np.vstack(
+                [x.values.ravel()[:100], y.values.ravel()[:100]]
+            ).T
 
         value = self.transect_resolution.expand_path(value)
 
