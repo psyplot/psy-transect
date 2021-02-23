@@ -172,6 +172,7 @@ def nearest_points(
     List of xr.DataArray
         The given `arrays` at the location indicated by the given `points`
     """
+
     def expand_segment(p0, p1):
         N = int(np.max(np.ceil(np.abs(p1 - p0) / min_dist)))
         return np.concatenate(
@@ -402,6 +403,16 @@ def select_transect(
             points, arrays, coords, coord_dims, cell_dim, method=method, **kws
         )
     for da in interpolated:
+        # remove the old coordinates
+        if "coordinates" in da.encoding:
+            for coord in coords:
+                da.encoding["coordinates"] = da.encoding[
+                    "coordinates"
+                ].replace(coord.name, "")
+        if da.dims[-1] != cell_dim:
+            da = da.transpose(
+                *([d for d in da.dims if d != cell_dim] + [cell_dim])
+            )
         if da.name in ds.coords:
             ds.coords[da.name] = da
         else:
