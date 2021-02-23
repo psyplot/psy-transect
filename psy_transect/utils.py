@@ -440,7 +440,7 @@ def select_level(level, ds, coord, dim):
     arrays = [
         ds[key] for key in ds.variables if coord_dims <= set(ds[key].dims)
     ]
-    new_ds = ds.drop_dims(coord.dims).copy(deep=False)
+    new_ds = ds.drop_dims(dim)
 
     if arrays:
         da = arrays[0].isel(
@@ -464,17 +464,14 @@ def select_level(level, ds, coord, dim):
 
     if coord.name not in coord.dims and coord.attrs.get("bounds") and arrays:
         decoder = psyd.CFDecoder(new_ds)
-        coord_selected = coord[selection]
 
-        coord_bounds = decoder.get_cell_node_coord(
-            new_ds[arrays[0].name], coord=coord_selected
-        ).values
-        valid = (coord_bounds.min(axis=-1) <= level) & (
-            coord_bounds.max(axis=-1) >= level
+        coord_bounds = ds[coord.attrs["bounds"]]
+
+        valid = (coord_bounds.min(dim).min(axis=-1) <= level) & (
+            coord_bounds.max(dim).max(axis=-1) >= level
         )
-        mask = coord_selected.copy(data=valid.reshape(coord_selected.shape))
         for da in arrays:
-            new_ds[da.name] = new_ds[da.name].where(mask)
+            new_ds[da.name] = new_ds[da.name].where(valid)
             new_ds[da.name].attrs = da.attrs
             new_ds[da.name].encoding = da.encoding
     elif arrays:
