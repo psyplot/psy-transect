@@ -25,6 +25,8 @@ setup(
     packages=find_packages(exclude=["docs", "tests*", "examples"]),
     install_requires=[
         "psy-maps",
+        "pyinterp",
+        "scikit-learn",
     ],
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
