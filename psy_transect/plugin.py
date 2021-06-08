@@ -155,7 +155,7 @@ defaultParams = {
         "The method how to extract the transect from the data",
     ],
     "plotter.transect.transect_resolution": [
-        'auto',
+        "auto",
         try_and_error(
             validate_bool,
             ValidateInStrings("transect_resolution", ["auto"], False),
@@ -170,7 +170,9 @@ defaultParams = {
     ],
     "plotter.transect.coord": [
         "index",
-        ValidateInStrings("coord", ["index", "distance", "x", "y"], True),
+        ValidateInStrings(
+            "coord", ["index", "distance", "haversine", "x", "y"], True
+        ),
         "What to display on the x-axis",
     ],
     "plotter.vmaptransect.transform": maps_rcParams.defaultParams[

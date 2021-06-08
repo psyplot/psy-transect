@@ -138,6 +138,44 @@ def get_distance_from_start(points: np.ndarray) -> np.ndarray:
     return dist
 
 
+def get_haversine_distance_from_start(
+    points: np.ndarray, to_radian: bool = False
+) -> np.ndarray:
+    """Get the cumulative distance for a list of points.
+
+    This function calculates the distance between consecutive points and
+    generates the cumulative sum.
+
+    Parameters
+    ----------
+    points : np.ndarray of shape [N, M]
+        An array of point coordinates
+    to_radian: bool
+        If True, assume that the points are given in degrees and convert them
+        to radian.
+
+    Returns
+    -------
+    np.ndarray of shape N
+        The distance from the start of the path for each point in `points` in
+        units of km
+    """
+    if to_radian:
+        points = np.deg2rad(points)
+    x = points[:-1]
+    y = points[1:]
+    dist = 2 * np.arcsin(
+        np.sqrt(
+            np.sin((x[:, 0] - y[:, 0]) / 2) ** 2
+            + np.cos(x[:, 0])
+            * np.cos(y[:, 0])
+            * np.sin((x[:, 1] - y[:, 1]) / 2) ** 2
+        )
+    )
+    # compute the cumsum and multiply by the earth radius to get kilometer
+    return np.r_[0, dist.cumsum()] * 6371
+
+
 def estimate_resolution(*coords):
     """Estimate the minimum resolution in a grid."""
     coords = xr.broadcast(*coords)
@@ -155,6 +193,7 @@ def nearest_points(
     coord_dims: List[str],
     cell_dim: str,
     exact: bool = False,
+    compute_haversine: Optional[bool] = None,
 ) -> List[xr.DataArray]:
     """Select the closest grid cells along a path.
 
@@ -178,6 +217,11 @@ def nearest_points(
         If True, the resulting dimension indicated by `cell_dim` will have the
         size ``N``, otherwise we will only keep the unique cells within the
         given `coords`.
+    compute_haversine: bool, optional
+        If True, assume that the coordinate data is given in radian and compute
+        the haversine distance. If None, we will check if the coordinate units
+        are in ``"degrees_east"`` and ``"degrees_north"``, or ``"radian"`` and
+        compute the distance.
 
     Returns
     -------
@@ -210,6 +254,27 @@ def nearest_points(
         {"long_name": "Euclidean distance from the start of the transect"},
     )
 
+    to_radian = True
+    if compute_haversine is None:
+        if len(coords) == 2:
+            units = [coord.attrs.get("units", "") for coord in coords]
+            if all(unit.startswith("degrees") for unit in units):
+                to_radian = True
+                compute_haversine = True
+            elif all(unit == "radian" for unit in units):
+                to_radian = False
+                compute_haversine = True
+
+    if compute_haversine:
+        haversine = xr.Variable(
+            (cell_dim,),
+            get_haversine_distance_from_start(selected_points, to_radian),
+            {
+                "long_name": "Haversine distance from the start of the transect",
+                "units": "km",
+            },
+        )
+
     for da in arrays:
         dims_to_keep = tuple(dim for dim in da.dims if dim not in coord_dims)
         nkeep = len(dims_to_keep)
@@ -228,7 +293,11 @@ def nearest_points(
 
         nkeep = len(dims_to_keep)
 
-        da_coords[cell_dim + "_distance"] = distance
+        da_coords[cell_dim + "_distance"] = distance  # type: ignore
+        coordinates = cell_dim + "_distance"
+        if compute_haversine:
+            da_coords[cell_dim + "_haversine"] = haversine  # type: ignore
+            coordinates += " " + cell_dim + "_haversine"
 
         new = xr.DataArray(
             cell_data,
@@ -243,6 +312,10 @@ def nearest_points(
             for key, val in da.encoding.items()
             if key != "original_shape"
         }
+        if "coordinates" in encoding:
+            encoding["coordinates"] += " " + coordinates
+        else:
+            encoding["coordinates"] = coordinates
 
         remove_coordinates(new.attrs, coord_names, [cell_dim])
         remove_coordinates(encoding, coord_names, [cell_dim])

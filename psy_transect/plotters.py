@@ -228,6 +228,8 @@ class Transect(Formatoption):
 
 class VTransform(psypm.Transform):
 
+    __doc__ = psypm.Transform.__doc__
+
     connections = []
 
 
@@ -240,6 +242,11 @@ class AlternativeTransectXCoord(Formatoption):
         Will use the index of the cell along the transect
     ``'distance'``
         Will use the euclidean distance of the start of the transect
+    ``'haversine'``
+        Will use the haversine distance in kilometers of the start of the
+        transect. This can only be used if the x- and y-coordinates have
+        units in ``'degrees_east'`` and ``'degrees_north'``, or ``'radian'``
+        respectively.
     ``'x'``
         Will use the x-coordinate of the initial array
     ``'y'``
@@ -258,6 +265,8 @@ class AlternativeTransectXCoord(Formatoption):
             pass  # this is the default
         elif value == "distance":
             self.decoder.x = {cell_dim + "_distance"}
+        elif value == "haversine":
+            self.decoder.x = {cell_dim + "_haversine"}
         elif value == "x":
             x = self.raw_data.psy.get_coord("x", base=True)
             self.decoder.x = {x.name}
@@ -268,7 +277,27 @@ class AlternativeTransectXCoord(Formatoption):
             raise ValueError("Could not interprete %s" % (value,))
 
 
+class VerticalTransectTranspose(psyps.Transpose):
+    """Subclassed transpose to make sure we use the `coord` formatoption."""
+
+    __doc__ = psyps.Transpose
+
+    def get_x(self, arr):
+        if self.value:
+            return self.decoder.get_y(arr)
+        else:
+            return self.decoder.get_x(arr)
+
+    def get_y(self, arr):
+        if self.value:
+            return self.decoder.get_x(arr)
+        else:
+            return self.decoder.get_y(arr)
+
+
 class VerticalTransectPlotter(psyps.Simple2DPlotter):
+
+    transpose = VerticalTransectTranspose("transpose")
 
     selectors: Dict[Axes, widgets.LassoSelector]
 
@@ -295,7 +324,7 @@ class VerticalTransectPlotter(psyps.Simple2DPlotter):
 
     def _update_transect(self, ax, points):
         """Update the transect for the given value."""
-        self.update(**{self._transect_fmt: points})
+        self.update(**{self._transect_fmt: points, "ylim": self.ylim.value})
 
     def connect_ax(self, ax: Axes, lineprops={"color": "red"}, **kwargs):
         """Connect to a matplotlib axes via lasso.
