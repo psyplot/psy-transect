@@ -494,6 +494,8 @@ def select_transect(
         else:
             ds[da.name] = da
 
+    ds = ds.reset_index(list(coord_dims))
+
     return ds
 
 
