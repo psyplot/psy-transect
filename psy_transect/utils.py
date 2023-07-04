@@ -494,6 +494,8 @@ def select_transect(
         else:
             ds[da.name] = da
 
+    ds = ds.reset_index(list(coord_dims))
+
     return ds
 
 
@@ -521,7 +523,7 @@ def select_level(level, ds, coord, dim):
         )
         coord = xr.broadcast(coord, da)[0]
 
-    selection = xr.ufuncs.fabs(coord - level).argmin(dim)
+    selection = xr.apply_ufunc(np.fabs, coord - level).argmin(dim)
 
     for da in arrays:
         if da.name in ds.coords:
