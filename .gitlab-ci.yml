@@ -13,7 +13,7 @@ cache:
 
 before_script:
   # install necessary libraries for pyinterp
-  - apt-get update -y && apt-get install g++ cmake libeigen3-dev libboost-dev libgsl-dev
+  - apt-get update -y && apt-get install -y g++ cmake libeigen3-dev libboost-dev libgsl-dev
   - python -m pip install -U pip
 
 test-package:
