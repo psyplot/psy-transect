@@ -12,8 +12,18 @@ cache:
     - .cache/pip
 
 before_script:
+  # install boost from sourceforge as libboost-dev only provides 1.74 and
+  # pyinterp requires at least 1.79
+  - |
+    wget https://boostorg.jfrog.io/artifactory/main/release/1.84.0/source/boost_1_84_0.tar.bz2
+    tar --bzip2 -xf boost_1_84_0.tar.bz2
+    cd boost_1_84_0
+    ./bootstrap.sh --prefix=/usr
+    ./b2 install
+    cd ..
+    rm -r boost_1_84_0.tar.bz2 boost_1_84_0
   # install necessary libraries for pyinterp
-  - apt-get update -y && apt-get install -y g++ cmake libeigen3-dev libboost-dev libgsl-dev
+  - apt-get update -y && apt-get install -y g++ cmake libeigen3-dev libgsl-dev python3-numpy
   - python -m pip install -U pip
 
 test-package:
