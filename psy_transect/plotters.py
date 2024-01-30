@@ -321,7 +321,7 @@ class VerticalTransectPlotter(psyps.Simple2DPlotter):
         """Update the transect for the given value."""
         self.update(**{self._transect_fmt: points, "ylim": self.ylim.value})
 
-    def connect_ax(self, ax: Axes, lineprops={"color": "red"}, **kwargs):
+    def connect_ax(self, ax: Axes, **kwargs):
         """Connect to a matplotlib axes via lasso.
 
         This creates a lasso to be used
@@ -335,7 +335,6 @@ class VerticalTransectPlotter(psyps.Simple2DPlotter):
             ax,
             partial(self._update_transect, ax),
             useblit=False,
-            lineprops=lineprops,
             **kwargs,
         )
         self.selectors[ax] = selector
