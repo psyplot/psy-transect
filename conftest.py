@@ -41,12 +41,12 @@ def get_test_file() -> Callable[[str], Path]:
     return get_file
 
 
-@pytest.fixture(scope="module")
+@pytest.fixture
 def test_ds(get_test_file: Callable[[str], Path]):
     with psyd.open_dataset(get_test_file("test.nc")) as ds:
         ds["level"] = ("level", np.arange(ds.dims["level"]))
         ds = utils.mesh_to_cf_bounds(
-            ds.HHL, old_dim="level1", new_dim="level", ds=ds
+            ds.psy.HHL, old_dim="level1", new_dim="level", ds=ds
         )
         yield ds
 
@@ -58,7 +58,10 @@ def temperature_data(test_ds):
 
 @pytest.fixture
 def wind_data(test_ds):
-    ret = test_ds.isel(time=0).psy[["u", "v"]].psy.to_array()
+    new_ds = test_ds.isel(time=0).psy[["u", "v"]]
+    new_ds["HHL_bnds"] = test_ds["HHL_bnds"]
+    new_ds = new_ds.set_coords("HHL_bnds")
+    ret = new_ds.psy.to_array()
     ret.encoding["coordinates"] = test_ds["u"].encoding["coordinates"]
     return ret
 
