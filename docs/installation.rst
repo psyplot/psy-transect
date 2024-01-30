@@ -13,7 +13,8 @@ Installation
    authors of psy-transect!
 
 To install the `psy-transect` package, we recommend that
-you install it from PyPi via::
+you first install the :ref:`requirements for pyinterp <pyinterp:requirements>`
+and then install it from PyPi via::
 
     pip install psy-transect
 
