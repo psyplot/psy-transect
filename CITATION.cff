@@ -1,0 +1,49 @@
+# SPDX-FileCopyrightText: 2021-2024 Helmholtz-Zentrum hereon GmbH
+#
+# SPDX-License-Identifier: CC0-1.0
+
+authors:
+  # list author information. see
+  # https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md#definitionsperson
+  # for metadata
+  - family-names: "Philipp S."
+    given-names: "Philipp S."
+    affiliation: "Helmholtz-Zentrum Hereon"
+    # orcid: null
+    email: "philipp.sommer@hereon.de"
+cff-version: 1.2.0
+message: "If you use this software, please cite it using these metadata."
+title: "psy-transect"
+keywords:
+  - "visualization"
+
+  - "psyplot"
+
+  - "ugrid"
+
+  - "cf"
+
+  - "climate models"
+
+  - "vertical transect"
+
+  - "earth system sciences"
+
+  - "scikit-learn"
+
+  - "pyinterp"
+
+license: 'LGPL-3.0-only'
+repository-code: "https://codebase.helmholtz.cloud/psyplot/psy-transect"
+url: "https://codebase.helmholtz.cloud/psyplot/psy-transect"
+contact:
+  # list maintainer information. see
+  # https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md#definitionsperson
+  # for metadata
+  - family-names: "Philipp S."
+    given-names: "Philipp S."
+    affiliation: "Helmholtz-Zentrum Hereon"
+    # orcid: null
+    email: "philipp.sommer@hereon.de"
+abstract: |
+  Psyplot plugin for visualizing data along a transect

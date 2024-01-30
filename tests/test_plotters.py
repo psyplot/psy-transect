@@ -1,4 +1,8 @@
-### Test module for psy_transect.plotters
+# SPDX-FileCopyrightText: 2021-2024 Helmholtz-Zentrum hereon GmbH
+#
+# SPDX-License-Identifier: LGPL-3.0-only
+
+"""Test module for psy_transect.plotters"""
 import psy_transect.plotters as psyt
 
 

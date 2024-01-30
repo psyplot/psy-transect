@@ -2,5 +2,9 @@
 #
 # SPDX-License-Identifier: CC0-1.0
 
-include versioneer.py
-include psy_transect/_version.py
+[flake8]
+extend-ignore =
+    E203
+    E402
+    E501
+    W503

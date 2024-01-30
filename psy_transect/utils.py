@@ -1,12 +1,15 @@
+# SPDX-FileCopyrightText: 2021-2024 Helmholtz-Zentrum hereon GmbH
+#
+# SPDX-License-Identifier: LGPL-3.0-only
+
 """Utility functions for psy-transect"""
-from typing import Union, Dict, Optional, List, Any
 from itertools import chain, filterfalse
+from typing import Any, List, Optional, Union, cast
 
-import xarray as xr
 import numpy as np
-from sklearn.neighbors import BallTree
-
 import psyplot.data as psyd
+import xarray as xr
+from sklearn.neighbors import BallTree
 
 
 def unique_everseen(iterable, key=None):
@@ -78,13 +81,16 @@ def mesh_to_cf_bounds(
         The updated `ds` or a fresh dataset
     """
     if coord_name is None:
-        coord_name = coord.name
+        coord_name = coord.name  # type: ignore[assignment]
+
+    coord_name = cast(str, coord_name)
+
     if ds is None:
         ds = xr.Dataset()
     bounds_data = np.concatenate(
         [
-            coord.isel(**{old_dim: slice(0, -1)}).values[..., None],
-            coord.isel(**{old_dim: slice(1, None)}).values[..., None],
+            coord.isel(**{old_dim: slice(0, -1)}).values[..., None],  # type: ignore[arg-type]
+            coord.isel(**{old_dim: slice(1, None)}).values[..., None],  # type: ignore[arg-type]
         ],
         -1,
     )
