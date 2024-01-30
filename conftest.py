@@ -1,7 +1,15 @@
+# SPDX-FileCopyrightText: 2021-2024 Helmholtz-Zentrum hereon GmbH
+#
+# SPDX-License-Identifier: LGPL-3.0-only
+
 import os.path as osp
+from pathlib import Path
+from typing import Callable
+
+import numpy as np
 import psyplot.data as psyd
 import pytest
-import numpy as np
+
 import psy_transect.utils as utils
 
 test_dir = osp.dirname(__file__)
@@ -11,8 +19,31 @@ psyd.rcParams["plotter.maps.ygrid"] = False
 
 
 @pytest.fixture(scope="module")
-def test_ds():
-    with psyd.open_dataset(osp.join(test_dir, "test.nc")) as ds:
+def get_test_file() -> Callable[[str], Path]:
+    """Fixture to get the path to a test file."""
+
+    def get_file(basename: str) -> Path:
+        """Get a file in the test folder
+
+        Parameters
+        ----------
+        basename : str
+            The basename of the file, relative to the tests folder
+
+        Returns
+        -------
+        Path
+            The path to the file relative to the working directory
+        """
+        test_folder = Path(__file__).parent / "tests"
+        return test_folder / basename
+
+    return get_file
+
+
+@pytest.fixture(scope="module")
+def test_ds(get_test_file: Callable[[str], Path]):
+    with psyd.open_dataset(get_test_file("test.nc")) as ds:
         ds["level"] = ("level", np.arange(ds.dims["level"]))
         ds = utils.mesh_to_cf_bounds(
             ds.HHL, old_dim="level1", new_dim="level", ds=ds

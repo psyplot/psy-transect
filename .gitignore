@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2021-2024 Helmholtz-Zentrum hereon GmbH
+#
+# SPDX-License-Identifier: CC0-1.0
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -136,3 +140,13 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+
+static/
+
+docs/api
+psy_transect/migrations/00*.py
+docs/_static/orcid.*
+
+# ignore Pipfile.lock files in ci
+# if a lock-file needs to be added, add it with `git add -f`
+ci/matrix/*/Pipfile.lock

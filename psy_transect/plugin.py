@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2021-2024 Helmholtz-Zentrum hereon GmbH
+#
+# SPDX-License-Identifier: LGPL-3.0-only
+
 """psy-transect psyplot plugin
 
 This module defines the rcParams for the psy-transect plugin. This module will
@@ -16,20 +20,22 @@ be imported when psyplot is imported. What is should contain is:
     .. code-block:: python
 
         import psyplot
-        import psy_transect.plugin"""
-from psyplot.config.rcsetup import RcParams
-from psy_transect import __version__ as plugin_version
-from psyplot.data import isstring
-from psy_simple.plugin import (
-    validate_float,
-    try_and_error,
-    validate_none,
-    validate_bool,
-    validate_str,
-    ValidateInStrings,
-)
-from psy_maps.plugin import rcParams as maps_rcParams
+        import psy_transect.plugin
+"""
 import numpy as np
+from psy_maps.plugin import rcParams as maps_rcParams
+from psy_simple.plugin import (
+    ValidateInStrings,
+    try_and_error,
+    validate_bool,
+    validate_float,
+    validate_none,
+    validate_str,
+)
+from psyplot.config.rcsetup import RcParams
+from psyplot.data import isstring
+
+from psy_transect import __version__ as plugin_version
 
 
 def get_versions(requirements=True):

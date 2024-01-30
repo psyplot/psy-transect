@@ -1,0 +1,147 @@
+# SPDX-FileCopyrightText: 2021-2024 Helmholtz-Zentrum hereon GmbH
+#
+# SPDX-License-Identifier: CC0-1.0
+
+[build-system]
+build-backend = 'setuptools.build_meta'
+requires = ['setuptools >= 61.0', 'versioneer[toml]']
+
+[project]
+name = "psy-transect"
+dynamic = ["version"]
+description = "Psyplot plugin for visualizing data along a transect"
+
+readme = "README.md"
+keywords = [
+    "visualization",
+
+    "psyplot",
+
+    "ugrid",
+
+    "cf",
+
+    "climate models",
+
+    "vertical transect",
+
+    "earth system sciences",
+
+    "scikit-learn",
+
+    "pyinterp",
+    ]
+
+authors = [
+    { name = 'Philipp S. Sommer', email = 'philipp.sommer@hereon.de' },
+]
+maintainers = [
+    { name = 'Philipp S. Sommer', email = 'philipp.sommer@hereon.de' },
+]
+license = { text = 'LGPL-3.0-only' }
+
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: European Union Public Licence 1.2 (EUPL 1.2)",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Visualization",
+    "Topic :: Scientific/Engineering :: GIS",
+    "Topic :: Scientific/Engineering",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Typing :: Typed",
+]
+
+requires-python = '>= 3.9'
+dependencies = [
+    # add your dependencies here
+    "psy-maps",
+    "pyinterp",
+    "scikit-learn",
+]
+
+[project.urls]
+Homepage = 'https://codebase.helmholtz.cloud/psyplot/psy-transect'
+Documentation = "https://psyplot.github.io/psy-transect"
+Source = "https://codebase.helmholtz.cloud/psyplot/psy-transect"
+Tracker = "https://codebase.helmholtz.cloud/psyplot/psy-transect/issues/"
+
+
+[project.entry-points."psyplot"]
+plugin = "psy_transect.plugin"
+
+[project.optional-dependencies]
+testsite = [
+    "tox",
+    "isort==5.12.0",
+    "black==23.1.0",
+    "blackdoc==0.3.8",
+    "flake8==6.0.0",
+    "pre-commit",
+    "mypy",
+    "pytest-cov",
+    "reuse",
+    "cffconvert",
+    "netCDF4",
+]
+docs = [
+    "autodocsumm",
+    "sphinx-rtd-theme",
+    "hereon-netcdf-sphinxext",
+    "sphinx-design",
+
+]
+dev = [
+    "psy-transect[testsite]",
+    "psy-transect[docs]",
+    "PyYAML",
+    "types-PyYAML",
+]
+
+
+[tool.mypy]
+ignore_missing_imports = true
+
+[tool.setuptools]
+zip-safe = false
+license-files = ["LICENSES/*"]
+
+[tool.setuptools.package-data]
+psy_transect = ["py.typed"]
+
+[tool.setuptools.packages.find]
+namespaces = false
+exclude = [
+    'docs',
+    'tests*',
+    'examples'
+]
+
+[tool.pytest.ini_options]
+addopts = '-v'
+
+[tool.versioneer]
+VCS = 'git'
+style = 'pep440'
+versionfile_source = 'psy_transect/_version.py'
+versionfile_build = 'psy_transect/_version.py'
+tag_prefix = 'v'
+parentdir_prefix = 'psy-transect-'
+
+[tool.isort]
+profile = "black"
+line_length = 79
+src_paths = ["psy_transect"]
+float_to_top = true
+known_first_party = "psy_transect"
+
+[tool.black]
+line-length = 79
+target-version = ['py39']
+
+[tool.coverage.run]
+omit = ["psy_transect/_version.py"]

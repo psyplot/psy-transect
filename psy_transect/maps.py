@@ -1,14 +1,15 @@
+# SPDX-FileCopyrightText: 2021-2024 Helmholtz-Zentrum hereon GmbH
+#
+# SPDX-License-Identifier: LGPL-3.0-only
+
 """Horizontal transects for maps."""
+from itertools import chain
 from typing import Dict
 
-from matplotlib.axes import Axes
-from matplotlib import widgets
-
-import numpy as np
 import psy_maps.plotters as psypm
-import psy_simple.plotters as psyps
+from matplotlib import widgets
+from matplotlib.axes import Axes
 from psyplot.plotter import START, Formatoption
-from itertools import chain
 
 import psy_transect.utils as utils
 
@@ -74,7 +75,6 @@ class MapTransectMapPlot2D(psypm.MapPlot2D):
 
 
 class HorizontalTransectPlotterMixin:
-
     transect: HorizontalTransect
 
     sliders: Dict[Axes, widgets.Slider]
@@ -95,9 +95,14 @@ class HorizontalTransectPlotterMixin:
             slider.valtext.set_position((0.5, slider.val))
 
     def connect_ax(
-        self, ax: Axes, orientation: str = "vertical",
-        facecolor="none", edgecolor="red", dragging=False,
-        label="Vertical transect", **kwargs,
+        self,
+        ax: Axes,
+        orientation: str = "vertical",
+        facecolor="none",
+        edgecolor="red",
+        dragging=False,
+        label="Vertical transect",
+        **kwargs,
     ) -> widgets.Slider:
         """Connect this plotter to an axes and draw a slider on it.
 
@@ -123,19 +128,23 @@ class HorizontalTransectPlotterMixin:
         # we draw an axes above the selected axes and use it for the slider
         if orientation == "vertical":
             slider_ax = fig.add_axes(
-                ax.get_position(), label="slider-ax", sharey=ax,
+                ax.get_position(),
+                label="slider-ax",
+                sharey=ax,
                 facecolor="none",
             )
         else:
             slider_ax = fig.add_axes(
-                ax.get_position(), label="slider-ax", sharex=ax,
+                ax.get_position(),
+                label="slider-ax",
+                sharex=ax,
                 facecolor="none",
             )
 
         transect_val = self[self._transect_fmt]  # type: ignore
         if transect_val is not None:
             kwargs["valinit"] = transect_val
-        z = self.data.psy.get_coord("z")
+        z = self.data.psy.get_coord("z")  # type: ignore
         vmin = z.min().values
         vmax = z.max().values
 
@@ -143,9 +152,13 @@ class HorizontalTransectPlotterMixin:
         kwargs.setdefault("valmax", vmax)
 
         slider = widgets.Slider(
-            slider_ax, orientation=orientation,
-            facecolor=facecolor, edgecolor=edgecolor, dragging=dragging,
-            label=label, **kwargs
+            slider_ax,
+            orientation=orientation,
+            facecolor=facecolor,
+            edgecolor=edgecolor,
+            dragging=dragging,
+            label=label,
+            **kwargs,
         )
 
         # update text properties to show the label above the line
@@ -178,7 +191,6 @@ class HorizontalTransectPlotterMixin:
 class HorizontalTransectFieldPlotter(
     HorizontalTransectPlotterMixin, psypm.FieldPlotter
 ):
-
     _rcparams_string = ["plotter.maptransect."]
 
     allowed_dims = 3
@@ -191,7 +203,6 @@ class HorizontalTransectFieldPlotter(
 class HorizontalTransectVectorPlotter(
     HorizontalTransectPlotterMixin, psypm.VectorPlotter
 ):
-
     _rcparams_string = ["plotter.maptransect.", "plotter.maptransect.vector"]
 
     allowed_dims = 4
@@ -203,7 +214,6 @@ class HorizontalTransectVectorPlotter(
 class HorizontalTransectCombinedPlotter(
     HorizontalTransectPlotterMixin, psypm.CombinedPlotter
 ):
-
     _rcparams_string = [
         "plotter.maptransect.",
         "plotter.maptransect.vector.",

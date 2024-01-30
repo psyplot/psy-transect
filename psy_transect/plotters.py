@@ -1,24 +1,22 @@
+# SPDX-FileCopyrightText: 2021-2024 Helmholtz-Zentrum hereon GmbH
+#
+# SPDX-License-Identifier: LGPL-3.0-only
+
 """plotters module of the psy-transect psyplot plugin
 """
-from typing import Dict, TYPE_CHECKING, Optional
-from functools import partial
 import warnings
+from functools import partial
+from typing import Dict, List, Optional
 
-from matplotlib.axes import Axes
-from matplotlib import widgets
-
-import xarray as xr
-
-from psyplot.plotter import START, Formatoption, docstrings
-from psyplot.data import CFDecoder
-import psy_simple.plotters as psyps
-import psy_maps.plotters as psypm
-import psy_transect.utils as utils
 import numpy as np
+import psy_maps.plotters as psypm
+import psy_simple.plotters as psyps
+from matplotlib import widgets
+from matplotlib.axes import Axes
+from psyplot.data import CFDecoder
+from psyplot.plotter import START, Formatoption, docstrings
 
-
-if TYPE_CHECKING:
-    from cartopy.crs import CRS
+import psy_transect.utils as utils
 
 
 class TransectResolution(Formatoption):
@@ -123,8 +121,7 @@ class TransectResolution(Formatoption):
             resolution = self.estimated_resolution
             if resolution is not None:
                 return self.expand_path_to_resolution(path, resolution)
-        else:
-            return self.expand_path_to_resolution(path, self.value)
+        return self.expand_path_to_resolution(path, self.value)
 
 
 class TransectMethod(Formatoption):
@@ -227,10 +224,9 @@ class Transect(Formatoption):
 
 
 class VTransform(psypm.Transform):
-
     __doc__ = psypm.Transform.__doc__
 
-    connections = []
+    connections: List[str] = []
 
 
 class AlternativeTransectXCoord(Formatoption):
@@ -296,7 +292,6 @@ class VerticalTransectTranspose(psyps.Transpose):
 
 
 class VerticalTransectPlotter(psyps.Simple2DPlotter):
-
     transpose = VerticalTransectTranspose("transpose")
 
     selectors: Dict[Axes, widgets.LassoSelector]
@@ -341,7 +336,7 @@ class VerticalTransectPlotter(psyps.Simple2DPlotter):
             partial(self._update_transect, ax),
             useblit=False,
             lineprops=lineprops,
-            **kwargs
+            **kwargs,
         )
         self.selectors[ax] = selector
         return selector
@@ -358,7 +353,6 @@ class VerticalTransectPlotter(psyps.Simple2DPlotter):
 
 
 class VerticalMapTransectPlotter(VerticalTransectPlotter):
-
     transform = VTransform("transform")
 
     _rcparams_string = ["plotter.vmaptransect."]

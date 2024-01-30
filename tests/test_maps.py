@@ -1,4 +1,9 @@
+# SPDX-FileCopyrightText: 2021-2024 Helmholtz-Zentrum hereon GmbH
+#
+# SPDX-License-Identifier: LGPL-3.0-only
+
 import cartopy.crs as ccrs
+
 import psy_transect.maps as psytm
 
 
