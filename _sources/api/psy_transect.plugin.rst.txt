@@ -1,0 +1,4 @@
+.. automodule:: psy_transect.plugin
+   :members:
+   :undoc-members:
+   :show-inheritance:

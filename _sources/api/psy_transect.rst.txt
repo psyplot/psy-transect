@@ -1,0 +1,18 @@
+psy\_transect package
+=====================
+
+.. automodule:: psy_transect
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   psy_transect.maps
+   psy_transect.plotters
+   psy_transect.plugin
+   psy_transect.utils

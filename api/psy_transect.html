@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>psy_transect package &mdash; psy-transect  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/nc-table-styles.css?v=d585f46f" />
+      <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Possible types" href="psy_transect.maps.html" />
+    <link rel="prev" title="API Reference" href="../api.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            psy-transect
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#installation-for-development">Installation for development</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">psy_transect package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.maps.html"><code class="docutils literal notranslate"><span class="pre">HorizontalTransect</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectCombinedPlotter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectFieldPlotter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectPlotterMixin"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectPlotterMixin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectVector"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectVector</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectVectorPlotter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.MapTransectDataGrid"><code class="docutils literal notranslate"><span class="pre">MapTransectDataGrid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.MapTransectMapPlot2D"><code class="docutils literal notranslate"><span class="pre">MapTransectMapPlot2D</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.plotters.html"><code class="docutils literal notranslate"><span class="pre">AlternativeTransectXCoord</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.Transect"><code class="docutils literal notranslate"><span class="pre">Transect</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.TransectMethod"><code class="docutils literal notranslate"><span class="pre">TransectMethod</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.TransectResolution"><code class="docutils literal notranslate"><span class="pre">TransectResolution</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.VTransform"><code class="docutils literal notranslate"><span class="pre">VTransform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter"><code class="docutils literal notranslate"><span class="pre">VerticalMapTransectPlotter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter"><code class="docutils literal notranslate"><span class="pre">VerticalTransectPlotter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.VerticalTransectTranspose"><code class="docutils literal notranslate"><span class="pre">VerticalTransectTranspose</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.plugin.html"><code class="docutils literal notranslate"><span class="pre">get_versions()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.plugin.html#psy_transect.plugin.validate_points"><code class="docutils literal notranslate"><span class="pre">validate_points()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.utils.html"><code class="docutils literal notranslate"><span class="pre">estimate_resolution()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.utils.html#psy_transect.utils.get_distance_from_start"><code class="docutils literal notranslate"><span class="pre">get_distance_from_start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.utils.html#psy_transect.utils.get_haversine_distance_from_start"><code class="docutils literal notranslate"><span class="pre">get_haversine_distance_from_start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.utils.html#psy_transect.utils.interpolate_points"><code class="docutils literal notranslate"><span class="pre">interpolate_points()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.utils.html#psy_transect.utils.mesh_to_cf_bounds"><code class="docutils literal notranslate"><span class="pre">mesh_to_cf_bounds()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.utils.html#psy_transect.utils.nearest_points"><code class="docutils literal notranslate"><span class="pre">nearest_points()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.utils.html#psy_transect.utils.remove_coordinates"><code class="docutils literal notranslate"><span class="pre">remove_coordinates()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.utils.html#psy_transect.utils.select_level"><code class="docutils literal notranslate"><span class="pre">select_level()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.utils.html#psy_transect.utils.select_transect"><code class="docutils literal notranslate"><span class="pre">select_transect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.utils.html#psy_transect.utils.unique_everseen"><code class="docutils literal notranslate"><span class="pre">unique_everseen()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contribution and development hints</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">psy-transect</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">API Reference</a></li>
+      <li class="breadcrumb-item active">psy_transect package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/psy_transect.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-psy_transect">
+<span id="psy-transect-package"></span><h1>psy_transect package<a class="headerlink" href="#module-psy_transect" title="Link to this heading"></a></h1>
+<p>psy-transect</p>
+<p>Psyplot plugin for visualizing data along a transect</p>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="psy_transect.maps.html"><code class="docutils literal notranslate"><span class="pre">HorizontalTransect</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransect.name"><code class="docutils literal notranslate"><span class="pre">HorizontalTransect.name</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransect.priority"><code class="docutils literal notranslate"><span class="pre">HorizontalTransect.priority</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransect.update"><code class="docutils literal notranslate"><span class="pre">HorizontalTransect.update()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransect.update_data_from_ds"><code class="docutils literal notranslate"><span class="pre">HorizontalTransect.update_data_from_ds()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectCombinedPlotter</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.datagrid"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectCombinedPlotter.datagrid</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.plot"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectCombinedPlotter.plot</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.sliders"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectCombinedPlotter.sliders</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.transect"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectCombinedPlotter.transect</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.vtransect"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectCombinedPlotter.vtransect</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectFieldPlotter</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.allowed_dims"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectFieldPlotter.allowed_dims</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.datagrid"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectFieldPlotter.datagrid</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.plot"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectFieldPlotter.plot</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.sliders"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectFieldPlotter.sliders</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.transect"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectFieldPlotter.transect</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectPlotterMixin"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectPlotterMixin</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectPlotterMixin.connect_ax"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectPlotterMixin.connect_ax()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectPlotterMixin.disconnect_ax"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectPlotterMixin.disconnect_ax()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectPlotterMixin.get_enhanced_attrs"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectPlotterMixin.get_enhanced_attrs()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectPlotterMixin.sliders"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectPlotterMixin.sliders</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectPlotterMixin.transect"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectPlotterMixin.transect</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectVector"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectVector</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectVector.update_data_from_ds"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectVector.update_data_from_ds()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectVectorPlotter</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.allowed_dims"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectVectorPlotter.allowed_dims</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.datagrid"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectVectorPlotter.datagrid</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.sliders"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectVectorPlotter.sliders</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.transect"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectVectorPlotter.transect</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.MapTransectDataGrid"><code class="docutils literal notranslate"><span class="pre">MapTransectDataGrid</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.MapTransectDataGrid.mask_datagrid"><code class="docutils literal notranslate"><span class="pre">MapTransectDataGrid.mask_datagrid</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.MapTransectDataGrid.plot"><code class="docutils literal notranslate"><span class="pre">MapTransectDataGrid.plot</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.MapTransectDataGrid.raw_data"><code class="docutils literal notranslate"><span class="pre">MapTransectDataGrid.raw_data</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.MapTransectDataGrid.transform"><code class="docutils literal notranslate"><span class="pre">MapTransectDataGrid.transform</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.MapTransectMapPlot2D"><code class="docutils literal notranslate"><span class="pre">MapTransectMapPlot2D</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.MapTransectMapPlot2D.bounds"><code class="docutils literal notranslate"><span class="pre">MapTransectMapPlot2D.bounds</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.MapTransectMapPlot2D.clip"><code class="docutils literal notranslate"><span class="pre">MapTransectMapPlot2D.clip</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.MapTransectMapPlot2D.cmap"><code class="docutils literal notranslate"><span class="pre">MapTransectMapPlot2D.cmap</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.MapTransectMapPlot2D.data_dependent"><code class="docutils literal notranslate"><span class="pre">MapTransectMapPlot2D.data_dependent</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.MapTransectMapPlot2D.interp_bounds"><code class="docutils literal notranslate"><span class="pre">MapTransectMapPlot2D.interp_bounds</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.MapTransectMapPlot2D.levels"><code class="docutils literal notranslate"><span class="pre">MapTransectMapPlot2D.levels</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.MapTransectMapPlot2D.lonlatbox"><code class="docutils literal notranslate"><span class="pre">MapTransectMapPlot2D.lonlatbox</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.MapTransectMapPlot2D.raw_data"><code class="docutils literal notranslate"><span class="pre">MapTransectMapPlot2D.raw_data</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.MapTransectMapPlot2D.transform"><code class="docutils literal notranslate"><span class="pre">MapTransectMapPlot2D.transform</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="psy_transect.plotters.html"><code class="docutils literal notranslate"><span class="pre">AlternativeTransectXCoord</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.AlternativeTransectXCoord.dependencies"><code class="docutils literal notranslate"><span class="pre">AlternativeTransectXCoord.dependencies</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.AlternativeTransectXCoord.name"><code class="docutils literal notranslate"><span class="pre">AlternativeTransectXCoord.name</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.AlternativeTransectXCoord.priority"><code class="docutils literal notranslate"><span class="pre">AlternativeTransectXCoord.priority</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.AlternativeTransectXCoord.transect"><code class="docutils literal notranslate"><span class="pre">AlternativeTransectXCoord.transect</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.AlternativeTransectXCoord.update"><code class="docutils literal notranslate"><span class="pre">AlternativeTransectXCoord.update()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.Transect"><code class="docutils literal notranslate"><span class="pre">Transect</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.Transect.data_dependent"><code class="docutils literal notranslate"><span class="pre">Transect.data_dependent</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.Transect.dependencies"><code class="docutils literal notranslate"><span class="pre">Transect.dependencies</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.Transect.diff"><code class="docutils literal notranslate"><span class="pre">Transect.diff()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.Transect.name"><code class="docutils literal notranslate"><span class="pre">Transect.name</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.Transect.priority"><code class="docutils literal notranslate"><span class="pre">Transect.priority</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.Transect.transect_method"><code class="docutils literal notranslate"><span class="pre">Transect.transect_method</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.Transect.transect_resolution"><code class="docutils literal notranslate"><span class="pre">Transect.transect_resolution</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.Transect.update"><code class="docutils literal notranslate"><span class="pre">Transect.update()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.TransectMethod"><code class="docutils literal notranslate"><span class="pre">TransectMethod</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.TransectMethod.name"><code class="docutils literal notranslate"><span class="pre">TransectMethod.name</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.TransectMethod.priority"><code class="docutils literal notranslate"><span class="pre">TransectMethod.priority</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.TransectMethod.update"><code class="docutils literal notranslate"><span class="pre">TransectMethod.update()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.TransectResolution"><code class="docutils literal notranslate"><span class="pre">TransectResolution</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.TransectResolution.estimated_resolution"><code class="docutils literal notranslate"><span class="pre">TransectResolution.estimated_resolution</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.TransectResolution.expand_path"><code class="docutils literal notranslate"><span class="pre">TransectResolution.expand_path()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.TransectResolution.expand_path_to_resolution"><code class="docutils literal notranslate"><span class="pre">TransectResolution.expand_path_to_resolution()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.TransectResolution.name"><code class="docutils literal notranslate"><span class="pre">TransectResolution.name</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.TransectResolution.update"><code class="docutils literal notranslate"><span class="pre">TransectResolution.update()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.VTransform"><code class="docutils literal notranslate"><span class="pre">VTransform</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.VTransform.connections"><code class="docutils literal notranslate"><span class="pre">VTransform.connections</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter"><code class="docutils literal notranslate"><span class="pre">VerticalMapTransectPlotter</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.selectors"><code class="docutils literal notranslate"><span class="pre">VerticalMapTransectPlotter.selectors</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.transform"><code class="docutils literal notranslate"><span class="pre">VerticalMapTransectPlotter.transform</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter"><code class="docutils literal notranslate"><span class="pre">VerticalTransectPlotter</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.allowed_dims"><code class="docutils literal notranslate"><span class="pre">VerticalTransectPlotter.allowed_dims</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.connect_ax"><code class="docutils literal notranslate"><span class="pre">VerticalTransectPlotter.connect_ax()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.coord"><code class="docutils literal notranslate"><span class="pre">VerticalTransectPlotter.coord</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.disconnect_ax"><code class="docutils literal notranslate"><span class="pre">VerticalTransectPlotter.disconnect_ax()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.get_enhanced_attrs"><code class="docutils literal notranslate"><span class="pre">VerticalTransectPlotter.get_enhanced_attrs()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.selectors"><code class="docutils literal notranslate"><span class="pre">VerticalTransectPlotter.selectors</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.transect"><code class="docutils literal notranslate"><span class="pre">VerticalTransectPlotter.transect</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.transect_method"><code class="docutils literal notranslate"><span class="pre">VerticalTransectPlotter.transect_method</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.transect_resolution"><code class="docutils literal notranslate"><span class="pre">VerticalTransectPlotter.transect_resolution</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.transpose"><code class="docutils literal notranslate"><span class="pre">VerticalTransectPlotter.transpose</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.VerticalTransectTranspose"><code class="docutils literal notranslate"><span class="pre">VerticalTransectTranspose</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.VerticalTransectTranspose.get_x"><code class="docutils literal notranslate"><span class="pre">VerticalTransectTranspose.get_x()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.VerticalTransectTranspose.get_y"><code class="docutils literal notranslate"><span class="pre">VerticalTransectTranspose.get_y()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="psy_transect.plugin.html"><code class="docutils literal notranslate"><span class="pre">get_versions()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="psy_transect.plugin.html#psy_transect.plugin.validate_points"><code class="docutils literal notranslate"><span class="pre">validate_points()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="psy_transect.utils.html"><code class="docutils literal notranslate"><span class="pre">estimate_resolution()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="psy_transect.utils.html#psy_transect.utils.get_distance_from_start"><code class="docutils literal notranslate"><span class="pre">get_distance_from_start()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="psy_transect.utils.html#psy_transect.utils.get_haversine_distance_from_start"><code class="docutils literal notranslate"><span class="pre">get_haversine_distance_from_start()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="psy_transect.utils.html#psy_transect.utils.interpolate_points"><code class="docutils literal notranslate"><span class="pre">interpolate_points()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="psy_transect.utils.html#psy_transect.utils.mesh_to_cf_bounds"><code class="docutils literal notranslate"><span class="pre">mesh_to_cf_bounds()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="psy_transect.utils.html#psy_transect.utils.nearest_points"><code class="docutils literal notranslate"><span class="pre">nearest_points()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="psy_transect.utils.html#psy_transect.utils.remove_coordinates"><code class="docutils literal notranslate"><span class="pre">remove_coordinates()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="psy_transect.utils.html#psy_transect.utils.select_level"><code class="docutils literal notranslate"><span class="pre">select_level()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="psy_transect.utils.html#psy_transect.utils.select_transect"><code class="docutils literal notranslate"><span class="pre">select_transect()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="psy_transect.utils.html#psy_transect.utils.unique_everseen"><code class="docutils literal notranslate"><span class="pre">unique_everseen()</span></code></a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <!--
+SPDX-FileCopyrightText: 2021-2024 Helmholtz-Zentrum hereon GmbH
+
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
+<footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../api.html" class="btn btn-neutral float-left" title="API Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="psy_transect.maps.html" class="btn btn-neutral float-right" title="Possible types" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021-2024 Helmholtz-Zentrum hereon GmbH.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+
+<div class="footer">
+    <span class="creativecommons">
+    <a href="https://creativecommons.org/licenses/by/4.0/" >
+    <img style="height: 1.5em;" src="../_static/license_logo.png" border="0" alt="Creative Commons License"/>
+    </a>
+    This documentation is licensed under
+    <a href="https://creativecommons.org/licenses/by/4.0/">
+    CC-BY-4.0
+    </a>
+    </span>
+</div>
+
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

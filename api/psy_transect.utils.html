@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>&lt;no title&gt; &mdash; psy-transect  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/nc-table-styles.css?v=d585f46f" />
+      <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Contribution and development hints" href="../contributing.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="psy_transect.plugin.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            psy-transect
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#installation-for-development">Installation for development</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="psy_transect.html">psy_transect package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="psy_transect.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.maps.html"><code class="docutils literal notranslate"><span class="pre">HorizontalTransect</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectCombinedPlotter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectFieldPlotter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectPlotterMixin"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectPlotterMixin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectVector"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectVector</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectVectorPlotter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.MapTransectDataGrid"><code class="docutils literal notranslate"><span class="pre">MapTransectDataGrid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.MapTransectMapPlot2D"><code class="docutils literal notranslate"><span class="pre">MapTransectMapPlot2D</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.plotters.html"><code class="docutils literal notranslate"><span class="pre">AlternativeTransectXCoord</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.Transect"><code class="docutils literal notranslate"><span class="pre">Transect</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.TransectMethod"><code class="docutils literal notranslate"><span class="pre">TransectMethod</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.TransectResolution"><code class="docutils literal notranslate"><span class="pre">TransectResolution</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.VTransform"><code class="docutils literal notranslate"><span class="pre">VTransform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter"><code class="docutils literal notranslate"><span class="pre">VerticalMapTransectPlotter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter"><code class="docutils literal notranslate"><span class="pre">VerticalTransectPlotter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.plotters.html#psy_transect.plotters.VerticalTransectTranspose"><code class="docutils literal notranslate"><span class="pre">VerticalTransectTranspose</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.plugin.html"><code class="docutils literal notranslate"><span class="pre">get_versions()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.plugin.html#psy_transect.plugin.validate_points"><code class="docutils literal notranslate"><span class="pre">validate_points()</span></code></a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">estimate_resolution()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#psy_transect.utils.get_distance_from_start"><code class="docutils literal notranslate"><span class="pre">get_distance_from_start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#psy_transect.utils.get_haversine_distance_from_start"><code class="docutils literal notranslate"><span class="pre">get_haversine_distance_from_start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#psy_transect.utils.interpolate_points"><code class="docutils literal notranslate"><span class="pre">interpolate_points()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#psy_transect.utils.mesh_to_cf_bounds"><code class="docutils literal notranslate"><span class="pre">mesh_to_cf_bounds()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#psy_transect.utils.nearest_points"><code class="docutils literal notranslate"><span class="pre">nearest_points()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#psy_transect.utils.remove_coordinates"><code class="docutils literal notranslate"><span class="pre">remove_coordinates()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#psy_transect.utils.select_level"><code class="docutils literal notranslate"><span class="pre">select_level()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#psy_transect.utils.select_transect"><code class="docutils literal notranslate"><span class="pre">select_transect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#psy_transect.utils.unique_everseen"><code class="docutils literal notranslate"><span class="pre">unique_everseen()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contribution and development hints</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">psy-transect</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">API Reference</a></li>
+          <li class="breadcrumb-item"><a href="psy_transect.html">psy_transect package</a></li>
+      <li class="breadcrumb-item active">&lt;no title&gt;</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/psy_transect.utils.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p id="module-psy_transect.utils">Utility functions for psy-transect</p>
+<p><strong>Functions:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#psy_transect.utils.estimate_resolution" title="psy_transect.utils.estimate_resolution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">estimate_resolution</span></code></a>(*coords)</p></td>
+<td><p>Estimate the minimum resolution in a grid.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#psy_transect.utils.get_distance_from_start" title="psy_transect.utils.get_distance_from_start"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_distance_from_start</span></code></a>(points)</p></td>
+<td><p>Get the cumulative distance for a list of points.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#psy_transect.utils.get_haversine_distance_from_start" title="psy_transect.utils.get_haversine_distance_from_start"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_haversine_distance_from_start</span></code></a>(points[, ...])</p></td>
+<td><p>Get the cumulative distance for a list of points.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#psy_transect.utils.interpolate_points" title="psy_transect.utils.interpolate_points"><code class="xref py py-obj docutils literal notranslate"><span class="pre">interpolate_points</span></code></a>(points, arrays, coords, ...)</p></td>
+<td><p>Interpolate data arrays along a path.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#psy_transect.utils.mesh_to_cf_bounds" title="psy_transect.utils.mesh_to_cf_bounds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mesh_to_cf_bounds</span></code></a>(coord, old_dim, new_dim[, ...])</p></td>
+<td><p>Transform a mesh boundary variable to CF-conform bounds</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#psy_transect.utils.nearest_points" title="psy_transect.utils.nearest_points"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nearest_points</span></code></a>(points, arrays, coords, ...)</p></td>
+<td><p>Select the closest grid cells along a path.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#psy_transect.utils.remove_coordinates" title="psy_transect.utils.remove_coordinates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_coordinates</span></code></a>(encoding, coord_names[, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#psy_transect.utils.select_level" title="psy_transect.utils.select_level"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_level</span></code></a>(level, ds, coord, dim)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#psy_transect.utils.select_transect" title="psy_transect.utils.select_transect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_transect</span></code></a>(points, ds, *coords[, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#psy_transect.utils.unique_everseen" title="psy_transect.utils.unique_everseen"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unique_everseen</span></code></a>(iterable[, key])</p></td>
+<td><p>List unique elements, preserving order.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="psy_transect.utils.estimate_resolution">
+<span class="sig-prename descclassname"><span class="pre">psy_transect.utils.</span></span><span class="sig-name descname"><span class="pre">estimate_resolution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">coords</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psy_transect.utils.estimate_resolution" title="Link to this definition"></a></dt>
+<dd><p>Estimate the minimum resolution in a grid.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="psy_transect.utils.get_distance_from_start">
+<span class="sig-prename descclassname"><span class="pre">psy_transect.utils.</span></span><span class="sig-name descname"><span class="pre">get_distance_from_start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#psy_transect.utils.get_distance_from_start" title="Link to this definition"></a></dt>
+<dd><p>Get the cumulative distance for a list of points.</p>
+<p>This function calculates the distance between consecutive points and
+generates the cumulative sum.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>points</strong> (<em>np.ndarray</em><em> of </em><em>shape</em><em> [</em><em>N</em><em>, </em><em>M</em><em>]</em>) – An array of point coordinates</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The distance from the start of the path for each point in <cite>points</cite>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray of shape N</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="psy_transect.utils.get_haversine_distance_from_start">
+<span class="sig-prename descclassname"><span class="pre">psy_transect.utils.</span></span><span class="sig-name descname"><span class="pre">get_haversine_distance_from_start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_radian</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#psy_transect.utils.get_haversine_distance_from_start" title="Link to this definition"></a></dt>
+<dd><p>Get the cumulative distance for a list of points.</p>
+<p>This function calculates the distance between consecutive points and
+generates the cumulative sum.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>points</strong> (<em>np.ndarray</em><em> of </em><em>shape</em><em> [</em><em>N</em><em>, </em><em>M</em><em>]</em>) – An array of point coordinates</p></li>
+<li><p><strong>to_radian</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) – If True, assume that the points are given in degrees and convert them
+to radian.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The distance from the start of the path for each point in <cite>points</cite> in
+units of km</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray of shape N</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="psy_transect.utils.interpolate_points">
+<span class="sig-prename descclassname"><span class="pre">psy_transect.utils.</span></span><span class="sig-name descname"><span class="pre">interpolate_points</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arrays</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><span class="pre">DataArray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coords</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><span class="pre">IndexVariable</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coord_dims</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cell_dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'inverse_distance_weighting'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kws</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><span class="pre">DataArray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#psy_transect.utils.interpolate_points" title="Link to this definition"></a></dt>
+<dd><p>Interpolate data arrays along a path.</p>
+<p>This method interpolates data arrays to a path indicated by an array
+of points.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>points</strong> (<em>np.ndarray</em><em> of </em><em>shape</em><em> [</em><em>N</em><em>, </em><em>M</em><em>]</em>) – The path consisting of <code class="docutils literal notranslate"><span class="pre">N</span></code> points with <code class="docutils literal notranslate"><span class="pre">M</span></code> dimensions</p></li>
+<li><p><strong>arrays</strong> (<em>List</em><em>[</em><em>xr.DataArray</em><em>]</em>) – The data arrays to extract</p></li>
+<li><p><strong>coords</strong> (<em>List</em><em>[</em><em>xr.IndexVariable</em><em>]</em>) – The list of the <code class="docutils literal notranslate"><span class="pre">M</span></code> coordinates that belong to the given <cite>arrays</cite></p></li>
+<li><p><strong>coord_dims</strong> (<em>List</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>]</em>) – The names of each of the <code class="docutils literal notranslate"><span class="pre">M</span></code> dimensions. This list must have the same
+number of dimensions as the size of the second dimension in <cite>points</cite>.</p></li>
+<li><p><strong>cell_dim</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – The name of the dimension to generate for the new arrays.</p></li>
+<li><p><strong>exact</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a><em>, </em><em>optional</em>) – If True, the resulting dimension indicated by <cite>cell_dim</cite> will have the
+size <code class="docutils literal notranslate"><span class="pre">N</span></code>, otherwise we will only keep the unique cells within the
+given <cite>coords</cite>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The given <cite>arrays</cite> at the location indicated by the given <cite>points</cite></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of xr.DataArray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="psy_transect.utils.mesh_to_cf_bounds">
+<span class="sig-prename descclassname"><span class="pre">psy_transect.utils.</span></span><span class="sig-name descname"><span class="pre">mesh_to_cf_bounds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coord</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataArray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">IndexVariable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">old_dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dataset</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coordinate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bounds_dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'bnds'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coord_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_coordinate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dataset</span></span></span><a class="headerlink" href="#psy_transect.utils.mesh_to_cf_bounds" title="Link to this definition"></a></dt>
+<dd><p>Transform a mesh boundary variable to CF-conform bounds</p>
+<p>This function takes a coordinate with shape <code class="docutils literal notranslate"><span class="pre">(l,</span> <span class="pre">m,</span> <span class="pre">n+1)</span></code> and transforms
+it into a variable of shape <code class="docutils literal notranslate"><span class="pre">(l,</span> <span class="pre">m,</span> <span class="pre">n,</span> <span class="pre">2)</span></code>. <code class="docutils literal notranslate"><span class="pre">n</span></code> can be at any position
+of the variable. The exact position is defined by the <cite>dim_map</cite> parameter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>coord</strong> (<em>xarray.DataArray</em><em> or </em><em>xarray.IndexVariable</em>) – The original coordinate to transform</p></li>
+<li><p><strong>old_dim</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – The name of the dimension within the <code class="docutils literal notranslate"><span class="pre">dims</span></code> attribute of <cite>coord</cite> with
+size <code class="docutils literal notranslate"><span class="pre">n+1</span></code></p></li>
+<li><p><strong>new_dim</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – The new name of the dimension that will have size <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p></li>
+<li><p><strong>ds</strong> (<em>xarray.Dataset</em><em>, </em><em>optional</em>) – The dataset where to store the new data into. By default, a new empty
+dataset will be created</p></li>
+<li><p><strong>coordinate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a><em>, </em><em>optional</em>) – If True, generate the coordinate variable. If False, only the
+CF-conform bounds variable is created. By default True.</p></li>
+<li><p><strong>bounds_dim</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>, </em><em>optional</em>) – The name of the newly created dimension with shape 2, by default “bnds”</p></li>
+<li><p><strong>coord_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>, </em><em>optional</em>) – The name of the coordinate. This parameter will be ignored if
+<cite>coordinate</cite> is <code class="docutils literal notranslate"><span class="pre">False</span></code>. If None, the coordinate will get the same
+name as <cite>coord</cite>. By default None.</p></li>
+<li><p><strong>add_coordinate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a><em>, </em><em>optional</em>) – If True and <cite>coordinate</cite> is True, the generated <cite>coordinate</cite> will be
+added to the <code class="docutils literal notranslate"><span class="pre">'coordinates'</span></code> attribute of all variables in the
+provided dataset <cite>ds</cite> that have the all the dimensions of <cite>coord</cite>.
+By default True</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The updated <cite>ds</cite> or a fresh dataset</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>xarray.Dataset</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="psy_transect.utils.nearest_points">
+<span class="sig-prename descclassname"><span class="pre">psy_transect.utils.</span></span><span class="sig-name descname"><span class="pre">nearest_points</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arrays</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><span class="pre">DataArray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coords</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><span class="pre">IndexVariable</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coord_dims</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cell_dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">exact</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compute_haversine</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><span class="pre">DataArray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#psy_transect.utils.nearest_points" title="Link to this definition"></a></dt>
+<dd><p>Select the closest grid cells along a path.</p>
+<p>This method takes the closest grid cells along a transect using
+scikit-learns BallTree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>points</strong> (<em>np.ndarray</em><em> of </em><em>shape</em><em> [</em><em>N</em><em>, </em><em>M</em><em>]</em>) – The path consisting of <code class="docutils literal notranslate"><span class="pre">N</span></code> points with <code class="docutils literal notranslate"><span class="pre">M</span></code> dimensions</p></li>
+<li><p><strong>arrays</strong> (<em>List</em><em>[</em><em>xr.DataArray</em><em>]</em>) – The data arrays to extract</p></li>
+<li><p><strong>coords</strong> (<em>List</em><em>[</em><em>xr.IndexVariable</em><em>]</em>) – The list of the <code class="docutils literal notranslate"><span class="pre">M</span></code> coordinates that belong to the given <cite>arrays</cite></p></li>
+<li><p><strong>coord_dims</strong> (<em>List</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>]</em>) – The names of each of the <code class="docutils literal notranslate"><span class="pre">M</span></code> dimensions. This list must have the same
+number of dimensions as the size of the second dimension in <cite>points</cite>.</p></li>
+<li><p><strong>cell_dim</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – The name of the dimension to generate for the new arrays.</p></li>
+<li><p><strong>exact</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a><em>, </em><em>optional</em>) – If True, the resulting dimension indicated by <cite>cell_dim</cite> will have the
+size <code class="docutils literal notranslate"><span class="pre">N</span></code>, otherwise we will only keep the unique cells within the
+given <cite>coords</cite>.</p></li>
+<li><p><strong>compute_haversine</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a><em>, </em><em>optional</em>) – If True, assume that the coordinate data is given in radian and compute
+the haversine distance. If None, we will check if the coordinate units
+are in <code class="docutils literal notranslate"><span class="pre">&quot;degrees_east&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;degrees_north&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;radian&quot;</span></code> and
+compute the distance.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The given <cite>arrays</cite> at the location indicated by the given <cite>points</cite></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of xr.DataArray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="psy_transect.utils.remove_coordinates">
+<span class="sig-prename descclassname"><span class="pre">psy_transect.utils.</span></span><span class="sig-name descname"><span class="pre">remove_coordinates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">encoding</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coord_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_coords</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psy_transect.utils.remove_coordinates" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="psy_transect.utils.select_level">
+<span class="sig-prename descclassname"><span class="pre">psy_transect.utils.</span></span><span class="sig-name descname"><span class="pre">select_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psy_transect.utils.select_level" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="psy_transect.utils.select_transect">
+<span class="sig-prename descclassname"><span class="pre">psy_transect.utils.</span></span><span class="sig-name descname"><span class="pre">select_transect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exact</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cell_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'nearest'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kws</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psy_transect.utils.select_transect" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="psy_transect.utils.unique_everseen">
+<span class="sig-prename descclassname"><span class="pre">psy_transect.utils.</span></span><span class="sig-name descname"><span class="pre">unique_everseen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psy_transect.utils.unique_everseen" title="Link to this definition"></a></dt>
+<dd><p>List unique elements, preserving order. Remember all elements ever seen.</p>
+<p>Function taken from <a class="reference external" href="https://docs.python.org/2/library/itertools.html">https://docs.python.org/2/library/itertools.html</a></p>
+</dd></dl>
+
+
+
+           </div>
+          </div>
+          <!--
+SPDX-FileCopyrightText: 2021-2024 Helmholtz-Zentrum hereon GmbH
+
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
+<footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="psy_transect.plugin.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../contributing.html" class="btn btn-neutral float-right" title="Contribution and development hints" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021-2024 Helmholtz-Zentrum hereon GmbH.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+
+<div class="footer">
+    <span class="creativecommons">
+    <a href="https://creativecommons.org/licenses/by/4.0/" >
+    <img style="height: 1.5em;" src="../_static/license_logo.png" border="0" alt="Creative Commons License"/>
+    </a>
+    This documentation is licensed under
+    <a href="https://creativecommons.org/licenses/by/4.0/">
+    CC-BY-4.0
+    </a>
+    </span>
+</div>
+
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

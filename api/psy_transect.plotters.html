@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Possible types &mdash; psy-transect  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/nc-table-styles.css?v=d585f46f" />
+      <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="psy_transect.plugin.html" />
+    <link rel="prev" title="Possible types" href="psy_transect.maps.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            psy-transect
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#installation-for-development">Installation for development</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="psy_transect.html">psy_transect package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="psy_transect.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.maps.html"><code class="docutils literal notranslate"><span class="pre">HorizontalTransect</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectCombinedPlotter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectFieldPlotter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectPlotterMixin"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectPlotterMixin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectVector"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectVector</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter"><code class="docutils literal notranslate"><span class="pre">HorizontalTransectVectorPlotter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.MapTransectDataGrid"><code class="docutils literal notranslate"><span class="pre">MapTransectDataGrid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.MapTransectMapPlot2D"><code class="docutils literal notranslate"><span class="pre">MapTransectMapPlot2D</span></code></a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">AlternativeTransectXCoord</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#psy_transect.plotters.Transect"><code class="docutils literal notranslate"><span class="pre">Transect</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#psy_transect.plotters.TransectMethod"><code class="docutils literal notranslate"><span class="pre">TransectMethod</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#psy_transect.plotters.TransectResolution"><code class="docutils literal notranslate"><span class="pre">TransectResolution</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#psy_transect.plotters.VTransform"><code class="docutils literal notranslate"><span class="pre">VTransform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#psy_transect.plotters.VerticalMapTransectPlotter"><code class="docutils literal notranslate"><span class="pre">VerticalMapTransectPlotter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#psy_transect.plotters.VerticalTransectPlotter"><code class="docutils literal notranslate"><span class="pre">VerticalTransectPlotter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#psy_transect.plotters.VerticalTransectTranspose"><code class="docutils literal notranslate"><span class="pre">VerticalTransectTranspose</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.plugin.html"><code class="docutils literal notranslate"><span class="pre">get_versions()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.plugin.html#psy_transect.plugin.validate_points"><code class="docutils literal notranslate"><span class="pre">validate_points()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.utils.html"><code class="docutils literal notranslate"><span class="pre">estimate_resolution()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.utils.html#psy_transect.utils.get_distance_from_start"><code class="docutils literal notranslate"><span class="pre">get_distance_from_start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.utils.html#psy_transect.utils.get_haversine_distance_from_start"><code class="docutils literal notranslate"><span class="pre">get_haversine_distance_from_start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.utils.html#psy_transect.utils.interpolate_points"><code class="docutils literal notranslate"><span class="pre">interpolate_points()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.utils.html#psy_transect.utils.mesh_to_cf_bounds"><code class="docutils literal notranslate"><span class="pre">mesh_to_cf_bounds()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.utils.html#psy_transect.utils.nearest_points"><code class="docutils literal notranslate"><span class="pre">nearest_points()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.utils.html#psy_transect.utils.remove_coordinates"><code class="docutils literal notranslate"><span class="pre">remove_coordinates()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.utils.html#psy_transect.utils.select_level"><code class="docutils literal notranslate"><span class="pre">select_level()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.utils.html#psy_transect.utils.select_transect"><code class="docutils literal notranslate"><span class="pre">select_transect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="psy_transect.utils.html#psy_transect.utils.unique_everseen"><code class="docutils literal notranslate"><span class="pre">unique_everseen()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contribution and development hints</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">psy-transect</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">API Reference</a></li>
+          <li class="breadcrumb-item"><a href="psy_transect.html">psy_transect package</a></li>
+      <li class="breadcrumb-item active">Possible types</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/psy_transect.plotters.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p id="module-psy_transect.plotters">plotters module of the psy-transect psyplot plugin</p>
+<p><strong>Classes:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#psy_transect.plotters.AlternativeTransectXCoord" title="psy_transect.plotters.AlternativeTransectXCoord"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AlternativeTransectXCoord</span></code></a>(key[, plotter, ...])</p></td>
+<td><p>Specify what to use for the x-axis</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#psy_transect.plotters.Transect" title="psy_transect.plotters.Transect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Transect</span></code></a>(key[, plotter, index_in_list, ...])</p></td>
+<td><p>Transect within a 2D plot</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#psy_transect.plotters.TransectMethod" title="psy_transect.plotters.TransectMethod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TransectMethod</span></code></a>(key[, plotter, ...])</p></td>
+<td><p>Specify the method how to select the transect.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#psy_transect.plotters.TransectResolution" title="psy_transect.plotters.TransectResolution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TransectResolution</span></code></a>(key[, plotter, ...])</p></td>
+<td><p>Expand the transect to a minimum resolution.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#psy_transect.plotters.VTransform" title="psy_transect.plotters.VTransform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VTransform</span></code></a>(key[, plotter, index_in_list, ...])</p></td>
+<td><p>Specify the coordinate system of the data</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#psy_transect.plotters.VerticalMapTransectPlotter" title="psy_transect.plotters.VerticalMapTransectPlotter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VerticalMapTransectPlotter</span></code></a>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#psy_transect.plotters.VerticalTransectPlotter" title="psy_transect.plotters.VerticalTransectPlotter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VerticalTransectPlotter</span></code></a>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#psy_transect.plotters.VerticalTransectTranspose" title="psy_transect.plotters.VerticalTransectTranspose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VerticalTransectTranspose</span></code></a>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="psy_transect.plotters.AlternativeTransectXCoord">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">psy_transect.plotters.</span></span><span class="sig-name descname"><span class="pre">AlternativeTransectXCoord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plotter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_in_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_children</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_dependencies</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psy_transect.plotters.AlternativeTransectXCoord" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Formatoption</span></code></p>
+<p>Specify what to use for the x-axis</p>
+<section id="possible-types">
+<h1>Possible types<a class="headerlink" href="#possible-types" title="Link to this heading"></a></h1>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">'index'</span></code></dt><dd><p>Will use the index of the cell along the transect</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">'distance'</span></code></dt><dd><p>Will use the euclidean distance of the start of the transect</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">'haversine'</span></code></dt><dd><p>Will use the haversine distance in kilometers of the start of the
+transect. This can only be used if the x- and y-coordinates have
+units in <code class="docutils literal notranslate"><span class="pre">'degrees_east'</span></code> and <code class="docutils literal notranslate"><span class="pre">'degrees_north'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'radian'</span></code>
+respectively.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">'x'</span></code></dt><dd><p>Will use the x-coordinate of the initial array</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">'y'</span></code></dt><dd><p>Will use the y-coordinate of the initial array</p>
+</dd>
+</dl>
+<p><strong>Attributes:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#psy_transect.plotters.AlternativeTransectXCoord.dependencies" title="psy_transect.plotters.AlternativeTransectXCoord.dependencies"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dependencies</span></code></a></p></td>
+<td><p><cite>list of str</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#psy_transect.plotters.AlternativeTransectXCoord.name" title="psy_transect.plotters.AlternativeTransectXCoord.name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#psy_transect.plotters.AlternativeTransectXCoord.priority" title="psy_transect.plotters.AlternativeTransectXCoord.priority"><code class="xref py py-obj docutils literal notranslate"><span class="pre">priority</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#psy_transect.plotters.AlternativeTransectXCoord.transect" title="psy_transect.plotters.AlternativeTransectXCoord.transect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transect</span></code></a></p></td>
+<td><p>transect Formatoption instance in the plotter</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Methods:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#psy_transect.plotters.AlternativeTransectXCoord.update" title="psy_transect.plotters.AlternativeTransectXCoord.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update</span></code></a>(value)</p></td>
+<td><p>Method that is call to update the formatoption on the axes</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psy_transect.plotters.AlternativeTransectXCoord.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['transect']</span></em><a class="headerlink" href="#psy_transect.plotters.AlternativeTransectXCoord.dependencies" title="Link to this definition"></a></dt>
+<dd><p><cite>list of str</cite>. List of formatoptions that force an update of this
+formatoption if they are updated.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psy_transect.plotters.AlternativeTransectXCoord.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Select</span> <span class="pre">the</span> <span class="pre">x-coordinate'</span></em><a class="headerlink" href="#psy_transect.plotters.AlternativeTransectXCoord.name" title="Link to this definition"></a></dt>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>. A bit more verbose name than the formatoption key to be
+included in the gui. If None, the key is used in the gui</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psy_transect.plotters.AlternativeTransectXCoord.priority">
+<span class="sig-name descname"><span class="pre">priority</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">30</span></em><a class="headerlink" href="#psy_transect.plotters.AlternativeTransectXCoord.priority" title="Link to this definition"></a></dt>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>. Priority value of the the formatoption determining when
+the formatoption is updated.</p>
+<ul class="simple">
+<li><p>10: at the end (for labels, etc.)</p></li>
+<li><p>20: before the plotting (e.g. for colormaps, etc.)</p></li>
+<li><p>30: before loading the data (e.g. for lonlatbox)</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psy_transect.plotters.AlternativeTransectXCoord.transect">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">transect</span></span><a class="headerlink" href="#psy_transect.plotters.AlternativeTransectXCoord.transect" title="Link to this definition"></a></dt>
+<dd><p>transect Formatoption instance in the plotter</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psy_transect.plotters.AlternativeTransectXCoord.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psy_transect.plotters.AlternativeTransectXCoord.update" title="Link to this definition"></a></dt>
+<dd><p>Method that is call to update the formatoption on the axes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – Value to update</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="psy_transect.plotters.Transect">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">psy_transect.plotters.</span></span><span class="sig-name descname"><span class="pre">Transect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plotter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_in_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_children</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_dependencies</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psy_transect.plotters.Transect" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Formatoption</span></code></p>
+<p>Transect within a 2D plot</p>
+<p>This formatoption takes a list of x-y tuples, the so-called transect, and
+extracts the raw data along this path.</p>
+<section id="id1">
+<h1>Possible types<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<dl class="simple">
+<dt>list of x-y tuples</dt><dd><p>The point coordinates of the transect.</p>
+</dd>
+<dt>None</dt><dd><p>Uses up to the first 100 cells</p>
+</dd>
+</dl>
+<p><strong>Attributes:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#psy_transect.plotters.Transect.data_dependent" title="psy_transect.plotters.Transect.data_dependent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data_dependent</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a> or a callable.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#psy_transect.plotters.Transect.dependencies" title="psy_transect.plotters.Transect.dependencies"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dependencies</span></code></a></p></td>
+<td><p><cite>list of str</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#psy_transect.plotters.Transect.name" title="psy_transect.plotters.Transect.name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#psy_transect.plotters.Transect.priority" title="psy_transect.plotters.Transect.priority"><code class="xref py py-obj docutils literal notranslate"><span class="pre">priority</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#psy_transect.plotters.Transect.transect_method" title="psy_transect.plotters.Transect.transect_method"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transect_method</span></code></a></p></td>
+<td><p>transect_method Formatoption instance in the plotter</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#psy_transect.plotters.Transect.transect_resolution" title="psy_transect.plotters.Transect.transect_resolution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transect_resolution</span></code></a></p></td>
+<td><p>transect_resolution Formatoption instance in the plotter</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Methods:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#psy_transect.plotters.Transect.diff" title="psy_transect.plotters.Transect.diff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">diff</span></code></a>(value)</p></td>
+<td><p>Checks whether the given value differs from what is currently set</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#psy_transect.plotters.Transect.update" title="psy_transect.plotters.Transect.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update</span></code></a>(value)</p></td>
+<td><p>Method that is call to update the formatoption on the axes</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psy_transect.plotters.Transect.data_dependent">
+<span class="sig-name descname"><span class="pre">data_dependent</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#psy_transect.plotters.Transect.data_dependent" title="Link to this definition"></a></dt>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a> or a callable. This attribute indicates whether this
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Formatoption</span></code> depends on the data and should be updated if the
+data changes. If it is a callable, it must accept one argument: the
+new data. (Note: This is automatically set to True for plot
+formatoptions)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psy_transect.plotters.Transect.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['transect_method',</span> <span class="pre">'transect_resolution']</span></em><a class="headerlink" href="#psy_transect.plotters.Transect.dependencies" title="Link to this definition"></a></dt>
+<dd><p><cite>list of str</cite>. List of formatoptions that force an update of this
+formatoption if they are updated.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psy_transect.plotters.Transect.diff">
+<span class="sig-name descname"><span class="pre">diff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psy_transect.plotters.Transect.diff" title="Link to this definition"></a></dt>
+<dd><p>Checks whether the given value differs from what is currently set</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – A possible value to set (make sure that it has been validate via
+the <code class="xref py py-attr docutils literal notranslate"><span class="pre">validate</span></code> attribute before)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the value differs from what is currently set</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psy_transect.plotters.Transect.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Transect</span> <span class="pre">within</span> <span class="pre">the</span> <span class="pre">raw</span> <span class="pre">data'</span></em><a class="headerlink" href="#psy_transect.plotters.Transect.name" title="Link to this definition"></a></dt>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>. A bit more verbose name than the formatoption key to be
+included in the gui. If None, the key is used in the gui</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psy_transect.plotters.Transect.priority">
+<span class="sig-name descname"><span class="pre">priority</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">30</span></em><a class="headerlink" href="#psy_transect.plotters.Transect.priority" title="Link to this definition"></a></dt>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>. Priority value of the the formatoption determining when
+the formatoption is updated.</p>
+<ul class="simple">
+<li><p>10: at the end (for labels, etc.)</p></li>
+<li><p>20: before the plotting (e.g. for colormaps, etc.)</p></li>
+<li><p>30: before loading the data (e.g. for lonlatbox)</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psy_transect.plotters.Transect.transect_method">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">transect_method</span></span><a class="headerlink" href="#psy_transect.plotters.Transect.transect_method" title="Link to this definition"></a></dt>
+<dd><p>transect_method Formatoption instance in the plotter</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psy_transect.plotters.Transect.transect_resolution">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">transect_resolution</span></span><a class="headerlink" href="#psy_transect.plotters.Transect.transect_resolution" title="Link to this definition"></a></dt>
+<dd><p>transect_resolution Formatoption instance in the plotter</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psy_transect.plotters.Transect.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psy_transect.plotters.Transect.update" title="Link to this definition"></a></dt>
+<dd><p>Method that is call to update the formatoption on the axes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – Value to update</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="psy_transect.plotters.TransectMethod">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">psy_transect.plotters.</span></span><span class="sig-name descname"><span class="pre">TransectMethod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plotter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_in_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_children</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_dependencies</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psy_transect.plotters.TransectMethod" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Formatoption</span></code></p>
+<p>Specify the method how to select the transect.</p>
+<p>This formatoption specifies how the transect is selected.</p>
+<section id="id2">
+<h1>Possible types<a class="headerlink" href="#id2" title="Link to this heading"></a></h1>
+<dl class="simple">
+<dt>‘nearest’</dt><dd><p>Take the nearest grid point along the transect. This will not
+interpolate and return a unique list of grid points from the raw data.</p>
+</dd>
+<dt>‘nearest_exact’</dt><dd><p>Take the nearest grid point, one point from the raw data per point in
+the transect</p>
+</dd>
+<dt>‘inverse_distance_weighting’</dt><dd><p>Interpolation of the value at the requested position by inverse
+distance weighting method. See
+<a class="reference external" href="https://pangeo-pyinterp.readthedocs.io/en/latest/generated/pyinterp.RTree.inverse_distance_weighting.html#pyinterp.RTree.inverse_distance_weighting" title="(in pyinterp v2023.5.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyinterp.RTree.inverse_distance_weighting()</span></code></a></p>
+</dd>
+<dt>str</dt><dd><p>Any other method suitable for the <cite>rbf</cite> parameter of the
+<a class="reference external" href="https://pangeo-pyinterp.readthedocs.io/en/latest/generated/pyinterp.RTree.radial_basis_function.html#pyinterp.RTree.radial_basis_function" title="(in pyinterp v2023.5.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyinterp.RTree.radial_basis_function()</span></code></a> method</p>
+</dd>
+</dl>
+<p><strong>Attributes:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#psy_transect.plotters.TransectMethod.name" title="psy_transect.plotters.TransectMethod.name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#psy_transect.plotters.TransectMethod.priority" title="psy_transect.plotters.TransectMethod.priority"><code class="xref py py-obj docutils literal notranslate"><span class="pre">priority</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Methods:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#psy_transect.plotters.TransectMethod.update" title="psy_transect.plotters.TransectMethod.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update</span></code></a>(value)</p></td>
+<td><p>Method that is call to update the formatoption on the axes</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psy_transect.plotters.TransectMethod.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Method</span> <span class="pre">for</span> <span class="pre">getting</span> <span class="pre">the</span> <span class="pre">data</span> <span class="pre">along</span> <span class="pre">the</span> <span class="pre">transect'</span></em><a class="headerlink" href="#psy_transect.plotters.TransectMethod.name" title="Link to this definition"></a></dt>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>. A bit more verbose name than the formatoption key to be
+included in the gui. If None, the key is used in the gui</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psy_transect.plotters.TransectMethod.priority">
+<span class="sig-name descname"><span class="pre">priority</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">30</span></em><a class="headerlink" href="#psy_transect.plotters.TransectMethod.priority" title="Link to this definition"></a></dt>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>. Priority value of the the formatoption determining when
+the formatoption is updated.</p>
+<ul class="simple">
+<li><p>10: at the end (for labels, etc.)</p></li>
+<li><p>20: before the plotting (e.g. for colormaps, etc.)</p></li>
+<li><p>30: before loading the data (e.g. for lonlatbox)</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psy_transect.plotters.TransectMethod.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psy_transect.plotters.TransectMethod.update" title="Link to this definition"></a></dt>
+<dd><p>Method that is call to update the formatoption on the axes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – Value to update</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="psy_transect.plotters.TransectResolution">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">psy_transect.plotters.</span></span><span class="sig-name descname"><span class="pre">TransectResolution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plotter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_in_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_children</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_dependencies</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psy_transect.plotters.TransectResolution" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Formatoption</span></code></p>
+<p>Expand the transect to a minimum resolution.</p>
+<p>This formatoption expands the segments of the transect to fullfil a
+minimum resolution. Everything but <code class="docutils literal notranslate"><span class="pre">False</span></code> will expand the segments of
+the transect to fullfil the minimum resolution.</p>
+<p>This formatoption is of particular importance if you want to use
+the vertical transect plotter in combination with a map.</p>
+<section id="id3">
+<h1>Possible types<a class="headerlink" href="#id3" title="Link to this heading"></a></h1>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">False</span></code></dt><dd><p>Do not make any changes to the provided <cite>transect</cite> but take it as it is</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">'auto'</span></code></dt><dd><p>The default value estimates the resolution of the underlying spatial
+data and estimates it’s minimum resolution.
+<strong>This won’t not work for unstructured data!</strong></p>
+</dd>
+<dt>float</dt><dd><p>Specify the spatial resolution directly</p>
+</dd>
+</dl>
+<p><strong>Attributes:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#psy_transect.plotters.TransectResolution.estimated_resolution" title="psy_transect.plotters.TransectResolution.estimated_resolution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">estimated_resolution</span></code></a></p></td>
+<td><p>Estimate the resolution of the input data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#psy_transect.plotters.TransectResolution.name" title="psy_transect.plotters.TransectResolution.name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Methods:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#psy_transect.plotters.TransectResolution.expand_path" title="psy_transect.plotters.TransectResolution.expand_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">expand_path</span></code></a>(path)</p></td>
+<td><p>Expand the path segments to match the datas resolution.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#psy_transect.plotters.TransectResolution.expand_path_to_resolution" title="psy_transect.plotters.TransectResolution.expand_path_to_resolution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">expand_path_to_resolution</span></code></a>(path, resolution)</p></td>
+<td><p>Expand a given set of points to match the given resolution.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#psy_transect.plotters.TransectResolution.update" title="psy_transect.plotters.TransectResolution.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update</span></code></a>(value)</p></td>
+<td><p>Method that is call to update the formatoption on the axes</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py property">
+<dt class="sig sig-object py" id="psy_transect.plotters.TransectResolution.estimated_resolution">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">estimated_resolution</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></em><a class="headerlink" href="#psy_transect.plotters.TransectResolution.estimated_resolution" title="Link to this definition"></a></dt>
+<dd><p>Estimate the resolution of the input data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psy_transect.plotters.TransectResolution.expand_path">
+<span class="sig-name descname"><span class="pre">expand_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#psy_transect.plotters.TransectResolution.expand_path" title="Link to this definition"></a></dt>
+<dd><p>Expand the path segments to match the datas resolution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>np.ndarray</em><em> of </em><em>shape</em><em> (</em><em>N</em><em>, </em><em>2</em><em>)</em>) – The x-y-coordinates of the path segments</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An array with <code class="docutils literal notranslate"><span class="pre">M&gt;=N</span></code> where each segment in the path is smaller.
+than the minimum resolution.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray of shape (M, 2)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psy_transect.plotters.TransectResolution.expand_path_to_resolution">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">expand_path_to_resolution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#psy_transect.plotters.TransectResolution.expand_path_to_resolution" title="Link to this definition"></a></dt>
+<dd><p>Expand a given set of points to match the given resolution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>np.ndarray</em><em> of </em><em>shape</em><em> (</em><em>N</em><em>, </em><em>2</em><em>)</em>) – The x-y-coordinates of the path segments</p></li>
+<li><p><strong>resolution</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><em>float</em></a>) – The minimum resolution that shall be used to expand the path</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An array with <code class="docutils literal notranslate"><span class="pre">M&gt;=N</span></code> where each segment in the path is smaller.
+than the minimum resolution.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray of shape (M, 2)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psy_transect.plotters.TransectResolution.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Minimum</span> <span class="pre">resolution</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">transect'</span></em><a class="headerlink" href="#psy_transect.plotters.TransectResolution.name" title="Link to this definition"></a></dt>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>. A bit more verbose name than the formatoption key to be
+included in the gui. If None, the key is used in the gui</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psy_transect.plotters.TransectResolution.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psy_transect.plotters.TransectResolution.update" title="Link to this definition"></a></dt>
+<dd><p>Method that is call to update the formatoption on the axes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – Value to update</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="psy_transect.plotters.VTransform">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">psy_transect.plotters.</span></span><span class="sig-name descname"><span class="pre">VTransform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plotter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_in_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_children</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_dependencies</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psy_transect.plotters.VTransform" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Transform</span></code></p>
+<p>Specify the coordinate system of the data</p>
+<p>This formatoption defines the coordinate system of the data (usually we
+expect a simple latitude longitude coordinate system)</p>
+<section id="id4">
+<h1>Possible types<a class="headerlink" href="#id4" title="Link to this heading"></a></h1>
+<dl>
+<dt>cartopy.crs.CRS</dt><dd><p>A cartopy projection instance (e.g. <code class="xref py py-class docutils literal notranslate"><span class="pre">cartopy.crs.PlateCarree</span></code>)</p>
+</dd>
+<dt>str</dt><dd><p>A string specifies the projection instance to use. The centered
+longitude and latitude are determined by the <code class="xref py py-attr docutils literal notranslate"><span class="pre">clon</span></code> and
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">clat</span></code> formatoptions.
+Possible strings are (each standing for the specified projection)</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>cf</p></td>
+<td><p>try to decode the CF-conventions</p></td>
+</tr>
+<tr class="row-even"><td><p>cyl</p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">cartopy.crs.PlateCarree</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>robin</p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">cartopy.crs.Robinson</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>moll</p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">cartopy.crs.Mollweide</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>geo</p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">cartopy.crs.Geostationary</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>northpole</p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">cartopy.crs.NorthPolarStereo</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>southpole</p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">cartopy.crs.SouthPolarStereo</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>ortho</p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">cartopy.crs.Orthographic</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>stereo</p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">cartopy.crs.Stereographic</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>near</p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">cartopy.crs.NearsidePerspective</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>rotated</p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">cartopy.crs.RotatedPole</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The special case <code class="docutils literal notranslate"><span class="pre">'cf'</span></code> tries to decode the CF-conventions in the
+data. If this is not possible, we assume a standard lat-lon projection
+(<code class="docutils literal notranslate"><span class="pre">'cyl'</span></code>)</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="http://cfconventions.org/Data/cf-conventions/cf-conventions-1.8/cf-conventions.html#appendix-grid-mappings">Grid-mappings of cf-conventions</a></p>
+</div>
+<p><strong>Attributes:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#psy_transect.plotters.VTransform.connections" title="psy_transect.plotters.VTransform.connections"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connections</span></code></a></p></td>
+<td><p><cite>list of str</cite>.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psy_transect.plotters.VTransform.connections">
+<span class="sig-name descname"><span class="pre">connections</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#psy_transect.plotters.VTransform.connections" title="Link to this definition"></a></dt>
+<dd><p><cite>list of str</cite>. Connections to other formatoptions that are (different
+from <code class="xref py py-attr docutils literal notranslate"><span class="pre">dependencies</span></code> and <code class="xref py py-attr docutils literal notranslate"><span class="pre">children</span></code>) not important for the
+update process</p>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="psy_transect.plotters.VerticalMapTransectPlotter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">psy_transect.plotters.</span></span><span class="sig-name descname"><span class="pre">VerticalMapTransectPlotter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psy_transect.plotters.VerticalMapTransectPlotter" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#psy_transect.plotters.VerticalTransectPlotter" title="psy_transect.plotters.VerticalTransectPlotter"><code class="xref py py-class docutils literal notranslate"><span class="pre">VerticalTransectPlotter</span></code></a></p>
+<p><strong>Attributes:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#psy_transect.plotters.VerticalMapTransectPlotter.selectors" title="psy_transect.plotters.VerticalMapTransectPlotter.selectors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">selectors</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#psy_transect.plotters.VerticalMapTransectPlotter.transform" title="psy_transect.plotters.VerticalMapTransectPlotter.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a></p></td>
+<td><p>Specify the coordinate system of the data</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psy_transect.plotters.VerticalMapTransectPlotter.selectors">
+<span class="sig-name descname"><span class="pre">selectors</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.12)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><span class="pre">Axes</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">LassoSelector</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#psy_transect.plotters.VerticalMapTransectPlotter.selectors" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psy_transect.plotters.VerticalMapTransectPlotter.transform">
+<span class="sig-name descname"><span class="pre">transform</span></span><a class="headerlink" href="#psy_transect.plotters.VerticalMapTransectPlotter.transform" title="Link to this definition"></a></dt>
+<dd><p>Specify the coordinate system of the data</p>
+<p>This formatoption defines the coordinate system of the data (usually we
+expect a simple latitude longitude coordinate system)</p>
+<section id="id5">
+<h1>Possible types<a class="headerlink" href="#id5" title="Link to this heading"></a></h1>
+<dl>
+<dt>cartopy.crs.CRS</dt><dd><p>A cartopy projection instance (e.g. <code class="xref py py-class docutils literal notranslate"><span class="pre">cartopy.crs.PlateCarree</span></code>)</p>
+</dd>
+<dt>str</dt><dd><p>A string specifies the projection instance to use. The centered
+longitude and latitude are determined by the <code class="xref py py-attr docutils literal notranslate"><span class="pre">clon</span></code> and
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">clat</span></code> formatoptions.
+Possible strings are (each standing for the specified projection)</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>cf</p></td>
+<td><p>try to decode the CF-conventions</p></td>
+</tr>
+<tr class="row-even"><td><p>cyl</p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">cartopy.crs.PlateCarree</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>robin</p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">cartopy.crs.Robinson</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>moll</p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">cartopy.crs.Mollweide</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>geo</p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">cartopy.crs.Geostationary</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>northpole</p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">cartopy.crs.NorthPolarStereo</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>southpole</p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">cartopy.crs.SouthPolarStereo</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>ortho</p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">cartopy.crs.Orthographic</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>stereo</p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">cartopy.crs.Stereographic</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>near</p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">cartopy.crs.NearsidePerspective</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>rotated</p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">cartopy.crs.RotatedPole</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The special case <code class="docutils literal notranslate"><span class="pre">'cf'</span></code> tries to decode the CF-conventions in the
+data. If this is not possible, we assume a standard lat-lon projection
+(<code class="docutils literal notranslate"><span class="pre">'cyl'</span></code>)</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="http://cfconventions.org/Data/cf-conventions/cf-conventions-1.8/cf-conventions.html#appendix-grid-mappings">Grid-mappings of cf-conventions</a></p>
+</div>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="psy_transect.plotters.VerticalTransectPlotter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">psy_transect.plotters.</span></span><span class="sig-name descname"><span class="pre">VerticalTransectPlotter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psy_transect.plotters.VerticalTransectPlotter" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Simple2DPlotter</span></code></p>
+<p><strong>Attributes:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#psy_transect.plotters.VerticalTransectPlotter.allowed_dims" title="psy_transect.plotters.VerticalTransectPlotter.allowed_dims"><code class="xref py py-obj docutils literal notranslate"><span class="pre">allowed_dims</span></code></a></p></td>
+<td><p>The number of allowed dimensions in the for the visualization.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#psy_transect.plotters.VerticalTransectPlotter.coord" title="psy_transect.plotters.VerticalTransectPlotter.coord"><code class="xref py py-obj docutils literal notranslate"><span class="pre">coord</span></code></a></p></td>
+<td><p>Specify what to use for the x-axis</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#psy_transect.plotters.VerticalTransectPlotter.selectors" title="psy_transect.plotters.VerticalTransectPlotter.selectors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">selectors</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#psy_transect.plotters.VerticalTransectPlotter.transect" title="psy_transect.plotters.VerticalTransectPlotter.transect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transect</span></code></a></p></td>
+<td><p>Transect within a 2D plot</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#psy_transect.plotters.VerticalTransectPlotter.transect_method" title="psy_transect.plotters.VerticalTransectPlotter.transect_method"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transect_method</span></code></a></p></td>
+<td><p>Specify the method how to select the transect.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#psy_transect.plotters.VerticalTransectPlotter.transect_resolution" title="psy_transect.plotters.VerticalTransectPlotter.transect_resolution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transect_resolution</span></code></a></p></td>
+<td><p>Expand the transect to a minimum resolution.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#psy_transect.plotters.VerticalTransectPlotter.transpose" title="psy_transect.plotters.VerticalTransectPlotter.transpose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transpose</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Methods:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#psy_transect.plotters.VerticalTransectPlotter.connect_ax" title="psy_transect.plotters.VerticalTransectPlotter.connect_ax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect_ax</span></code></a>(ax, **kwargs)</p></td>
+<td><p>Connect to a matplotlib axes via lasso.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#psy_transect.plotters.VerticalTransectPlotter.disconnect_ax" title="psy_transect.plotters.VerticalTransectPlotter.disconnect_ax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">disconnect_ax</span></code></a>(ax)</p></td>
+<td><p>Disconnect this plotter from an axes and remove the selector.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#psy_transect.plotters.VerticalTransectPlotter.get_enhanced_attrs" title="psy_transect.plotters.VerticalTransectPlotter.get_enhanced_attrs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_enhanced_attrs</span></code></a>(arr, *args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psy_transect.plotters.VerticalTransectPlotter.allowed_dims">
+<span class="sig-name descname"><span class="pre">allowed_dims</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#psy_transect.plotters.VerticalTransectPlotter.allowed_dims" title="Link to this definition"></a></dt>
+<dd><p>The number of allowed dimensions in the for the visualization. If
+the array is unstructured, one dimension will be subtracted</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psy_transect.plotters.VerticalTransectPlotter.connect_ax">
+<span class="sig-name descname"><span class="pre">connect_ax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Axes</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psy_transect.plotters.VerticalTransectPlotter.connect_ax" title="Link to this definition"></a></dt>
+<dd><p>Connect to a matplotlib axes via lasso.</p>
+<p>This creates a lasso to be used</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ax</strong> (<em>Axes</em>) – The matplotlib axes to connect to</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psy_transect.plotters.VerticalTransectPlotter.coord">
+<span class="sig-name descname"><span class="pre">coord</span></span><a class="headerlink" href="#psy_transect.plotters.VerticalTransectPlotter.coord" title="Link to this definition"></a></dt>
+<dd><p>Specify what to use for the x-axis</p>
+<section id="id6">
+<h1>Possible types<a class="headerlink" href="#id6" title="Link to this heading"></a></h1>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">'index'</span></code></dt><dd><p>Will use the index of the cell along the transect</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">'distance'</span></code></dt><dd><p>Will use the euclidean distance of the start of the transect</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">'haversine'</span></code></dt><dd><p>Will use the haversine distance in kilometers of the start of the
+transect. This can only be used if the x- and y-coordinates have
+units in <code class="docutils literal notranslate"><span class="pre">'degrees_east'</span></code> and <code class="docutils literal notranslate"><span class="pre">'degrees_north'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'radian'</span></code>
+respectively.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">'x'</span></code></dt><dd><p>Will use the x-coordinate of the initial array</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">'y'</span></code></dt><dd><p>Will use the y-coordinate of the initial array</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psy_transect.plotters.VerticalTransectPlotter.disconnect_ax">
+<span class="sig-name descname"><span class="pre">disconnect_ax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Axes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psy_transect.plotters.VerticalTransectPlotter.disconnect_ax" title="Link to this definition"></a></dt>
+<dd><p>Disconnect this plotter from an axes and remove the selector.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psy_transect.plotters.VerticalTransectPlotter.get_enhanced_attrs">
+<span class="sig-name descname"><span class="pre">get_enhanced_attrs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psy_transect.plotters.VerticalTransectPlotter.get_enhanced_attrs" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psy_transect.plotters.VerticalTransectPlotter.selectors">
+<span class="sig-name descname"><span class="pre">selectors</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.12)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><span class="pre">Axes</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">LassoSelector</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#psy_transect.plotters.VerticalTransectPlotter.selectors" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psy_transect.plotters.VerticalTransectPlotter.transect">
+<span class="sig-name descname"><span class="pre">transect</span></span><a class="headerlink" href="#psy_transect.plotters.VerticalTransectPlotter.transect" title="Link to this definition"></a></dt>
+<dd><p>Transect within a 2D plot</p>
+<p>This formatoption takes a list of x-y tuples, the so-called transect, and
+extracts the raw data along this path.</p>
+<section id="id7">
+<h1>Possible types<a class="headerlink" href="#id7" title="Link to this heading"></a></h1>
+<dl class="simple">
+<dt>list of x-y tuples</dt><dd><p>The point coordinates of the transect.</p>
+</dd>
+<dt>None</dt><dd><p>Uses up to the first 100 cells</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psy_transect.plotters.VerticalTransectPlotter.transect_method">
+<span class="sig-name descname"><span class="pre">transect_method</span></span><a class="headerlink" href="#psy_transect.plotters.VerticalTransectPlotter.transect_method" title="Link to this definition"></a></dt>
+<dd><p>Specify the method how to select the transect.</p>
+<p>This formatoption specifies how the transect is selected.</p>
+<section id="id8">
+<h1>Possible types<a class="headerlink" href="#id8" title="Link to this heading"></a></h1>
+<dl class="simple">
+<dt>‘nearest’</dt><dd><p>Take the nearest grid point along the transect. This will not
+interpolate and return a unique list of grid points from the raw data.</p>
+</dd>
+<dt>‘nearest_exact’</dt><dd><p>Take the nearest grid point, one point from the raw data per point in
+the transect</p>
+</dd>
+<dt>‘inverse_distance_weighting’</dt><dd><p>Interpolation of the value at the requested position by inverse
+distance weighting method. See
+<a class="reference external" href="https://pangeo-pyinterp.readthedocs.io/en/latest/generated/pyinterp.RTree.inverse_distance_weighting.html#pyinterp.RTree.inverse_distance_weighting" title="(in pyinterp v2023.5.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyinterp.RTree.inverse_distance_weighting()</span></code></a></p>
+</dd>
+<dt>str</dt><dd><p>Any other method suitable for the <cite>rbf</cite> parameter of the
+<a class="reference external" href="https://pangeo-pyinterp.readthedocs.io/en/latest/generated/pyinterp.RTree.radial_basis_function.html#pyinterp.RTree.radial_basis_function" title="(in pyinterp v2023.5.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyinterp.RTree.radial_basis_function()</span></code></a> method</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psy_transect.plotters.VerticalTransectPlotter.transect_resolution">
+<span class="sig-name descname"><span class="pre">transect_resolution</span></span><a class="headerlink" href="#psy_transect.plotters.VerticalTransectPlotter.transect_resolution" title="Link to this definition"></a></dt>
+<dd><p>Expand the transect to a minimum resolution.</p>
+<p>This formatoption expands the segments of the transect to fullfil a
+minimum resolution. Everything but <code class="docutils literal notranslate"><span class="pre">False</span></code> will expand the segments of
+the transect to fullfil the minimum resolution.</p>
+<p>This formatoption is of particular importance if you want to use
+the vertical transect plotter in combination with a map.</p>
+<section id="id9">
+<h1>Possible types<a class="headerlink" href="#id9" title="Link to this heading"></a></h1>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">False</span></code></dt><dd><p>Do not make any changes to the provided <cite>transect</cite> but take it as it is</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">'auto'</span></code></dt><dd><p>The default value estimates the resolution of the underlying spatial
+data and estimates it’s minimum resolution.
+<strong>This won’t not work for unstructured data!</strong></p>
+</dd>
+<dt>float</dt><dd><p>Specify the spatial resolution directly</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psy_transect.plotters.VerticalTransectPlotter.transpose">
+<span class="sig-name descname"><span class="pre">transpose</span></span><a class="headerlink" href="#psy_transect.plotters.VerticalTransectPlotter.transpose" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="psy_transect.plotters.VerticalTransectTranspose">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">psy_transect.plotters.</span></span><span class="sig-name descname"><span class="pre">VerticalTransectTranspose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psy_transect.plotters.VerticalTransectTranspose" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Transpose</span></code></p>
+<p><strong>Methods:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#psy_transect.plotters.VerticalTransectTranspose.get_x" title="psy_transect.plotters.VerticalTransectTranspose.get_x"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_x</span></code></a>(arr)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#psy_transect.plotters.VerticalTransectTranspose.get_y" title="psy_transect.plotters.VerticalTransectTranspose.get_y"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_y</span></code></a>(arr)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="psy_transect.plotters.VerticalTransectTranspose.get_x">
+<span class="sig-name descname"><span class="pre">get_x</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psy_transect.plotters.VerticalTransectTranspose.get_x" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psy_transect.plotters.VerticalTransectTranspose.get_y">
+<span class="sig-name descname"><span class="pre">get_y</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psy_transect.plotters.VerticalTransectTranspose.get_y" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+
+
+           </div>
+          </div>
+          <!--
+SPDX-FileCopyrightText: 2021-2024 Helmholtz-Zentrum hereon GmbH
+
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
+<footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="psy_transect.maps.html" class="btn btn-neutral float-left" title="Possible types" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="psy_transect.plugin.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021-2024 Helmholtz-Zentrum hereon GmbH.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+
+<div class="footer">
+    <span class="creativecommons">
+    <a href="https://creativecommons.org/licenses/by/4.0/" >
+    <img style="height: 1.5em;" src="../_static/license_logo.png" border="0" alt="Creative Commons License"/>
+    </a>
+    This documentation is licensed under
+    <a href="https://creativecommons.org/licenses/by/4.0/">
+    CC-BY-4.0
+    </a>
+    </span>
+</div>
+
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
