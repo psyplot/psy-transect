@@ -215,7 +215,13 @@ class Transect(Formatoption):
         self.set_decoder(decoder)
 
     def diff(self, value):
-        return np.any(value != self.value)
+        try:
+            return not (
+                (np.shape(value) == np.shape(self.value))
+                and np.all(value == self.value)
+            )
+        except TypeError:
+            return True
 
 
 # -----------------------------------------------------------------------------
