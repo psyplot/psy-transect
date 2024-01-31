@@ -760,7 +760,7 @@ data. If this is not possible, we assume a standard lat-lon projection
 <p><strong>Methods:</strong></p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#psy_transect.plotters.VerticalTransectPlotter.connect_ax" title="psy_transect.plotters.VerticalTransectPlotter.connect_ax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect_ax</span></code></a>(ax, **kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#psy_transect.plotters.VerticalTransectPlotter.connect_ax" title="psy_transect.plotters.VerticalTransectPlotter.connect_ax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect_ax</span></code></a>(plotter_or_ax, **kwargs)</p></td>
 <td><p>Connect to a matplotlib axes via lasso.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#psy_transect.plotters.VerticalTransectPlotter.disconnect_ax" title="psy_transect.plotters.VerticalTransectPlotter.disconnect_ax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">disconnect_ax</span></code></a>(ax)</p></td>
@@ -780,12 +780,14 @@ the array is unstructured, one dimension will be subtracted</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="psy_transect.plotters.VerticalTransectPlotter.connect_ax">
-<span class="sig-name descname"><span class="pre">connect_ax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Axes</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psy_transect.plotters.VerticalTransectPlotter.connect_ax" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">connect_ax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plotter_or_ax</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="psy_transect.maps.html#psy_transect.maps.HorizontalTransectPlotterMixin" title="psy_transect.maps.HorizontalTransectPlotterMixin"><span class="pre">HorizontalTransectPlotterMixin</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Axes</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psy_transect.plotters.VerticalTransectPlotter.connect_ax" title="Link to this definition"></a></dt>
 <dd><p>Connect to a matplotlib axes via lasso.</p>
 <p>This creates a lasso to be used</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>ax</strong> (<em>Axes</em>) – The matplotlib axes to connect to</p>
+<dd class="field-odd"><p><strong>plotter_or_ax</strong> (<a class="reference internal" href="#psy_transect.plotters.VerticalTransectPlotter" title="psy_transect.plotters.VerticalTransectPlotter"><em>VerticalTransectPlotter</em></a><em> or </em><em>matplotlib.axes.Axes</em>) – The plotter whose axes to draw on, or an matplotlib axes. If you
+pass in the plotter, we make sure that lasso selectors of the
+plotter still work after an update.</p>
 </dd>
 </dl>
 </dd></dl>
