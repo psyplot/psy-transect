@@ -4,9 +4,11 @@
 
 """plotters module of the psy-transect psyplot plugin
 """
+from __future__ import annotations
+
 import warnings
 from functools import partial
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, TYPE_CHECKING, Union
 
 import numpy as np
 import psy_maps.plotters as psypm
@@ -17,6 +19,9 @@ from psyplot.data import CFDecoder
 from psyplot.plotter import START, Formatoption, docstrings
 
 import psy_transect.utils as utils
+
+if TYPE_CHECKING:
+    from psy_transect.maps import HorizontalTransectPlotterMixin
 
 
 class TransectResolution(Formatoption):
@@ -319,6 +324,7 @@ class VerticalTransectPlotter(psyps.Simple2DPlotter):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.selectors = {}
+        self._connected_horizontal_transect_plotters = {}
 
     def get_enhanced_attrs(self, arr, *args, **kwargs):
         return getattr(arr, "attrs", {})
@@ -326,17 +332,36 @@ class VerticalTransectPlotter(psyps.Simple2DPlotter):
     def _update_transect(self, ax, points):
         """Update the transect for the given value."""
         self.update(**{self._transect_fmt: points, "ylim": self.ylim.value})
+        selector = self.selectors.get(ax)
+        if selector:
+            for artist in selector.artists:
+                if artist not in ax.artists:
+                    ax.add_artist(artist)
 
-    def connect_ax(self, ax: Axes, **kwargs):
+    def connect_ax(
+        self,
+        plotter_or_ax: Union[HorizontalTransectPlotterMixin, Axes],
+        **kwargs,
+    ):
         """Connect to a matplotlib axes via lasso.
 
         This creates a lasso to be used
 
         Parameters
         ----------
-        ax : Axes
-            The matplotlib axes to connect to
+        plotter_or_ax: VerticalTransectPlotter or matplotlib.axes.Axes
+            The plotter whose axes to draw on, or an matplotlib axes. If you
+            pass in the plotter, we make sure that lasso selectors of the
+            plotter still work after an update.
         """
+        from psy_transect.maps import HorizontalTransectPlotterMixin
+
+        if isinstance(plotter_or_ax, HorizontalTransectPlotterMixin):
+            ax = plotter_or_ax.ax
+            plotter = plotter_or_ax
+        else:
+            ax = plotter_or_ax
+            plotter = None
         selector = widgets.LassoSelector(
             ax,
             partial(self._update_transect, ax),
@@ -344,6 +369,7 @@ class VerticalTransectPlotter(psyps.Simple2DPlotter):
             **kwargs,
         )
         self.selectors[ax] = selector
+        self._connected_horizontal_transect_plotters[ax] = plotter
         return selector
 
     def disconnect_ax(self, ax: Axes):
@@ -355,6 +381,7 @@ class VerticalTransectPlotter(psyps.Simple2DPlotter):
                 selector.line.remove()
             except (AttributeError, KeyError):
                 pass
+        self._connected_horizontal_transect_plotters.pop(ax, None)
 
 
 class VerticalMapTransectPlotter(VerticalTransectPlotter):

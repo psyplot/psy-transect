@@ -3,8 +3,12 @@
 # SPDX-License-Identifier: LGPL-3.0-only
 
 """Horizontal transects for maps."""
+
+from __future__ import annotations
+
 from itertools import chain
-from typing import Dict
+from typing import Dict, Union, TYPE_CHECKING
+from functools import partial
 
 import psy_maps.plotters as psypm
 from matplotlib import widgets
@@ -12,6 +16,7 @@ from matplotlib.axes import Axes
 from psyplot.plotter import START, Formatoption
 
 import psy_transect.utils as utils
+from psy_transect.plotters import VerticalTransectPlotter
 
 
 class HorizontalTransect(Formatoption):
@@ -88,8 +93,9 @@ class HorizontalTransectPlotterMixin:
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.sliders = {}
+        self._connected_vertical_transect_plotters = {}
 
-    def _update_transect(self, val):
+    def _update_transect(self, ax, val):
         """Update the transect for the given value."""
         self.update(**{self._transect_fmt: val})
         for slider in self.sliders.values():
@@ -97,10 +103,16 @@ class HorizontalTransectPlotterMixin:
                 slider.set_val(val)
             slider.label.set_position((0.5, slider.val))
             slider.valtext.set_position((0.5, slider.val))
+        for plotter in self._connected_vertical_transect_plotters.values():
+            selector = plotter.selectors.get(self.ax)
+            if selector:
+                for artist in selector.artists:
+                    if artist not in self.ax.artists:
+                        self.ax.add_artist(artist)
 
     def connect_ax(
         self,
-        ax: Axes,
+        plotter_or_ax: Union[VerticalTransectPlotter, Axes],
         orientation: str = "vertical",
         facecolor="none",
         edgecolor="red",
@@ -116,8 +128,10 @@ class HorizontalTransectPlotterMixin:
 
         Parameters
         ----------
-        ax: matplotlib.axes.Axes
-            The matplotlib axes to draw the slider on.
+        plotter_or_ax: VerticalTransectPlotter or matplotlib.axes.Axes
+            The plotter whose axes to draw on, or an matplotlib axes. If you
+            pass in the plotter, we make sure that lasso selectors of the
+            plotter still work after an update.
         orientation: str
             The orientation of the slider (which is vertical by default).
         ``*args, **kwargs``
@@ -129,6 +143,12 @@ class HorizontalTransectPlotterMixin:
         matplotlib.widgets.Slider
             The newly created slider
         """
+        if isinstance(plotter_or_ax, VerticalTransectPlotter):
+            ax = plotter_or_ax.ax
+            plotter = plotter_or_ax
+        else:
+            ax = plotter_or_ax
+            plotter = None
         fig = ax.figure
 
         # we draw an axes above the selected axes and use it for the slider
@@ -179,8 +199,12 @@ class HorizontalTransectPlotterMixin:
         slider.valtext.set_position((0.5, slider.val))
         slider.valtext.set_verticalalignment("top")
 
-        slider.on_changed(self._update_transect)
+        slider.on_changed(
+            partial(self._update_transect, ax),
+        )
         self.sliders[ax] = slider
+        if plotter is not None:
+            self._connected_vertical_transect_plotters[ax] = plotter
         return slider
 
     def disconnect_ax(self, ax: Axes):
@@ -189,6 +213,7 @@ class HorizontalTransectPlotterMixin:
             slider = self.sliders.pop(ax)
             fig = slider.ax.figure
             fig.delaxes(slider.ax)
+        self._connected_vertical_transect_plotters.pop(ax, None)
 
     def get_enhanced_attrs(self, *args, **kwargs):
         ret = super().get_enhanced_attrs(*args, **kwargs)
