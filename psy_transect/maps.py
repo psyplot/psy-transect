@@ -49,6 +49,10 @@ class HorizontalTransect(Formatoption):
         self.data = ds.psy[self.data.name]
 
 
+class HorizontalTransectLonLatBox(psypm.LonLatBox):
+    dependencies = psypm.LonLatBox.dependencies + ["transect"]
+
+
 class HorizontalTransectVector(HorizontalTransect):
     def update_data_from_ds(self, ds):
         variables = list(self.plotter.base_variables)[-2:]
@@ -100,6 +104,8 @@ class HorizontalTransectPlotterMixin:
         orientation: str = "vertical",
         facecolor="none",
         edgecolor="red",
+        track_color="none",
+        initcolor="red",
         dragging=False,
         label="Vertical transect",
         **kwargs,
@@ -156,6 +162,8 @@ class HorizontalTransectPlotterMixin:
             orientation=orientation,
             facecolor=facecolor,
             edgecolor=edgecolor,
+            track_color=track_color,
+            initcolor=initcolor,
             dragging=dragging,
             label=label,
             **kwargs,
@@ -198,6 +206,8 @@ class HorizontalTransectFieldPlotter(
     transect = HorizontalTransect("transect")
     plot = MapTransectMapPlot2D("plot")
     datagrid = MapTransectDataGrid("datagrid")
+
+    lonlatbox = HorizontalTransectLonLatBox("lonlatbox")
 
 
 class HorizontalTransectVectorPlotter(
