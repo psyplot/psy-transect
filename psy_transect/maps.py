@@ -6,9 +6,9 @@
 
 from __future__ import annotations
 
-from itertools import chain
-from typing import Dict, Union, TYPE_CHECKING
 from functools import partial
+from itertools import chain
+from typing import Dict, Union
 
 import psy_maps.plotters as psypm
 from matplotlib import widgets
@@ -92,8 +92,10 @@ class HorizontalTransectPlotterMixin:
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.sliders = {}
-        self._connected_vertical_transect_plotters = {}
+        self.sliders: Dict[Axes, widgets.Slider] = {}  # type: ignore[annotation-checked]
+        self._connected_vertical_transect_plotters: Dict[  # type: ignore[annotation-checked]
+            Axes, VerticalTransectPlotter
+        ] = {}
 
     def _update_transect(self, ax, val):
         """Update the transect for the given value."""

@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import warnings
 from functools import partial
-from typing import Dict, List, Optional, TYPE_CHECKING, Union
+from typing import TYPE_CHECKING, Dict, List, Optional, Union
 
 import numpy as np
 import psy_maps.plotters as psypm
@@ -323,8 +323,10 @@ class VerticalTransectPlotter(psyps.Simple2DPlotter):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.selectors = {}
-        self._connected_horizontal_transect_plotters = {}
+        self.selectors: Dict[Axes, widgets.LassoSelector] = {}  # type: ignore[annotation-checked]
+        self._connected_horizontal_transect_plotters: Dict[  # type: ignore[annotation-checked]
+            Axes, HorizontalTransectPlotterMixin
+        ] = {}
 
     def get_enhanced_attrs(self, arr, *args, **kwargs):
         return getattr(arr, "attrs", {})
@@ -356,8 +358,11 @@ class VerticalTransectPlotter(psyps.Simple2DPlotter):
         """
         from psy_transect.maps import HorizontalTransectPlotterMixin
 
+        ax: Axes
+        plotter: Optional[HorizontalTransectPlotterMixin]
+
         if isinstance(plotter_or_ax, HorizontalTransectPlotterMixin):
-            ax = plotter_or_ax.ax
+            ax = plotter_or_ax.ax  # type: ignore
             plotter = plotter_or_ax
         else:
             ax = plotter_or_ax
@@ -369,7 +374,8 @@ class VerticalTransectPlotter(psyps.Simple2DPlotter):
             **kwargs,
         )
         self.selectors[ax] = selector
-        self._connected_horizontal_transect_plotters[ax] = plotter
+        if plotter is not None:
+            self._connected_horizontal_transect_plotters[ax] = plotter
         return selector
 
     def disconnect_ax(self, ax: Axes):
