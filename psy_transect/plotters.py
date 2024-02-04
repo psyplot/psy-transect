@@ -209,9 +209,12 @@ class Transect(Formatoption):
         # update the data - this also updates the data for the plotter
         self.data = new_ds.psy[data.name]
 
+        cell_dim = self.transect_method.method_kws.get(
+            "cell_dim", "transect_cell"
+        )
         decoder = CFDecoder(
             new_ds,
-            x={self.data.dims[-1]},
+            x={cell_dim},
             y={self.raw_data.psy.get_coord("z").name},
         )
 
