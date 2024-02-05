@@ -532,10 +532,14 @@ def select_level(level, ds, coord, dim):
     selection = xr.apply_ufunc(np.fabs, coord - level).argmin(dim)
 
     for da in arrays:
-        if da.name in ds.coords:
-            new_ds.coords[da.name] = da.isel(**{dim: selection.values})
+        if selection.ndim:
+            selected = da[selection]
         else:
-            new_ds[da.name] = da.isel(**{dim: selection.values})
+            selected = da.sel(**{dim: selection.values})
+        if da.name in ds.coords:
+            new_ds.coords[da.name] = selected
+        else:
+            new_ds[da.name] = selected
         remove_coordinates(da.attrs, [coord.name])
         remove_coordinates(da.encoding, [coord.name])
     new_ds.coords[coord.name] = ((), level, coord.attrs)
