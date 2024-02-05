@@ -533,9 +533,9 @@ def select_level(level, ds, coord, dim):
 
     for da in arrays:
         if da.name in ds.coords:
-            new_ds.coords[da.name] = da.sel(**{dim: selection.values})
+            new_ds.coords[da.name] = da.isel(**{dim: selection.values})
         else:
-            new_ds[da.name] = da.sel(**{dim: selection.values})
+            new_ds[da.name] = da.isel(**{dim: selection.values})
         remove_coordinates(da.attrs, [coord.name])
         remove_coordinates(da.encoding, [coord.name])
     new_ds.coords[coord.name] = ((), level, coord.attrs)
