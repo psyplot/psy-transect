@@ -18,6 +18,7 @@ PyQt5 = {version="*"}
 PyQtWebEngine = {version="*"}
 psy-simple = {ref = "develop", git = "git+https://codebase.helmholtz.cloud/psyplot/psy-simple.git"}
 psy-maps = {ref = "develop", git = "git+https://codebase.helmholtz.cloud/psyplot/psy-maps.git"}
+pyinterp = {version = "==2024.1.0"}
 
 
 [dev-packages]
