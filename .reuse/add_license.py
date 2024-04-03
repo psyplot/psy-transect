@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: 2021-2024 Helmholtz-Zentrum hereon GmbH
 #
 # SPDX-License-Identifier: LGPL-3.0-only
+# SPDX-License-Identifier: LGPL-3.0-only
 
 """Helper script to add licenses to files.
 
@@ -18,12 +19,12 @@ Usage::
 
 import os.path as osp
 from argparse import ArgumentParser
+from pathlib import Path
 from textwrap import dedent
 from typing import Dict, Optional, TypedDict
 
 import yaml
 from reuse.project import Project
-from reuse.vcs import find_root
 
 try:
     from reuse._annotate import add_arguments as _orig_add_arguments
@@ -110,7 +111,7 @@ def main(argv=None):
     args.year.append(shortcut["year"])
     args.copyright.append(shortcut["copyright"])
 
-    project = Project(find_root())
+    project = Project(Path(__file__).parent.parent)
     args.func(args, project)
 
 

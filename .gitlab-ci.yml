@@ -54,8 +54,7 @@ test:
     - xvfb-run make pipenv-test
   parallel:
     matrix:
-      - SCENARIO:
-          - default
+      - SCENARIO: default
   artifacts:
     name: pipfile
     paths:
@@ -82,9 +81,9 @@ test-docs:
 deploy-package:
   stage: deploy
   needs:
-    - test-package
-    - test-docs
-    - test
+    - job: test-package
+    - job: test-docs
+    - job: test
   only:
     - master
   script:

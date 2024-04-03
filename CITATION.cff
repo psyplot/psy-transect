@@ -16,21 +16,13 @@ message: "If you use this software, please cite it using these metadata."
 title: "psy-transect"
 keywords:
   - "visualization"
-
   - "psyplot"
-
   - "ugrid"
-
   - "cf"
-
   - "climate models"
-
   - "vertical transect"
-
   - "earth system sciences"
-
   - "scikit-learn"
-
   - "pyinterp"
 
 license: 'LGPL-3.0-only'
