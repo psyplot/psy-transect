@@ -146,6 +146,8 @@ static/
 docs/api
 psy_transect/migrations/00*.py
 docs/_static/orcid.*
+docs/generated/
+docs/_static/docs_*.png
 
 # ignore Pipfile.lock files in ci
 # if a lock-file needs to be added, add it with `git add -f`
