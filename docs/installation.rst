@@ -7,11 +7,6 @@
 Installation
 ============
 
-.. warning::
-
-   This page has been automatically generated as has not yet been reviewed by the
-   authors of psy-transect!
-
 To install the `psy-transect` package, we recommend that
 you first install the :ref:`requirements for pyinterp <pyinterp:requirements>`
 and then install it from PyPi via::

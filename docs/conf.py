@@ -10,14 +10,21 @@
 
 # -- Path setup --------------------------------------------------------------
 
+import inspect
+
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 import os
 import sys
+from collections import defaultdict
+from itertools import chain
 from pathlib import Path
 
+import sphinx
+from autodocsumm import AutoSummClassDocumenter
+from psyplot.plotter import Formatoption, Plotter
 from sphinx.ext import apidoc
 
 sys.path.insert(0, os.path.abspath(".."))
@@ -73,6 +80,9 @@ extensions = [
     "autodocsumm",
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
+    "matplotlib.sphinxext.plot_directive",
+    "IPython.sphinxext.ipython_console_highlighting",
+    "IPython.sphinxext.ipython_directive",
 ]
 
 
@@ -90,6 +100,8 @@ autodoc_default_options = {
     "members": True,
     "autosummary": True,
 }
+
+ipython_savefig_dir = "_static"
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -113,4 +125,53 @@ intersphinx_mapping = {
     "python": ("https://docs.python.org/3/", None),
     "django": ("https://django.readthedocs.io/en/stable/", None),
     "pyinterp": ("https://pangeo-pyinterp.readthedocs.io/en/latest/", None),
+    "psyplot": ("https://psyplot.github.io/psyplot/", None),
 }
+
+
+def group_formatoptions(app, what, name, obj, section, parent):
+    if inspect.isclass(obj) and issubclass(obj, Formatoption):
+        return "Formatoption classes"
+    elif inspect.isclass(obj) and issubclass(obj, Plotter):
+        return "Plotter classes"
+    elif (
+        inspect.isclass(parent)
+        and issubclass(parent, Plotter)
+        and isinstance(obj, Formatoption)
+    ):
+        return obj.groupname
+
+
+class PlotterAutoClassDocumenter(AutoSummClassDocumenter):
+    """A ClassDocumenter that includes all the formatoption of a plotter"""
+
+    priority = AutoSummClassDocumenter.priority + 0.1
+
+    def filter_members(self, *args, **kwargs):
+        ret = super(AutoSummClassDocumenter, self).filter_members(
+            *args, **kwargs
+        )
+        if issubclass(self.object, Plotter):
+            fmt_members = defaultdict(set)
+            all_fmt = set(self.object._get_formatoptions())
+            for i, (mname, member, isattr) in enumerate(ret):
+                if isinstance(member, Formatoption):
+                    fmt_members[member.group].add((mname, member, isattr))
+                    all_fmt.remove(mname)
+            for fmt in all_fmt:
+                fmto = getattr(self.object, fmt)
+                fmt_members[fmto.group].add((fmt, fmto, True))
+            ret.extend(
+                (
+                    tup
+                    for tup in chain(*map(sorted, fmt_members.values()))
+                    if tup not in ret
+                )
+            )
+        return ret
+
+
+def setup(app):
+    app.add_autodocumenter(PlotterAutoClassDocumenter)
+    app.connect("autodocsumm-grouper", group_formatoptions)
+    return {"version": sphinx.__display_version__, "parallel_read_safe": True}
