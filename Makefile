@@ -75,13 +75,7 @@ quick-test: ## run tests quickly with the default Python
 	python -m pytest
 
 pipenv-test: ## run tox
-	pipenv run mypy psy_transect
-	pipenv run isort --check psy_transect
-	pipenv run black --line-length 79 --check psy_transect
-	pipenv run flake8 psy_transect
-	pipenv run pytest -v --cov=psy_transect -x
-	pipenv run reuse lint
-	pipenv run cffconvert --validate
+	pipenv run tox --current-env
 
 test: ## run tox
 	tox

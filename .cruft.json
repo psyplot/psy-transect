@@ -1,6 +1,6 @@
 {
   "template": "https://codebase.helmholtz.cloud/psyplot/psyplot-plugin-template.git",
-  "commit": "8b481a9c63f07a7d709a1dc383dacea7f076101e",
+  "commit": "29cb57a8afb5bffbbf22480d87d0d3c82aeccf4a",
   "checkout": null,
   "context": {
     "cookiecutter": {
@@ -26,10 +26,14 @@
       "keywords": "visualization,psyplot,ugrid,cf,climate models,vertical transect,earth system sciences,scikit-learn,pyinterp",
       "documentation_url": "https://psyplot.github.io/psy-transect",
       "use_markdown_for_documentation": "no",
+      "ci_build_stage": "no",
+      "use_cibuildwheel": "no",
       "ci_matrix": "pipenv",
+      "use_pytest_xdist": "no",
       "requires_gui": "yes",
       "deploy_package_in_ci": "yes",
       "deploy_pages_in_ci": "git-push",
+      "__ci_build_stage": "no",
       "_extensions": [
         "local_extensions.UnderlinedExtension"
       ],
