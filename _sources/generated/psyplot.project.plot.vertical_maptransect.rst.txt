@@ -1,0 +1,6 @@
+﻿psyplot.project.plot.vertical\_maptransect
+==========================================
+
+.. currentmodule:: psyplot.project
+
+.. autoattribute:: plot.vertical_maptransect

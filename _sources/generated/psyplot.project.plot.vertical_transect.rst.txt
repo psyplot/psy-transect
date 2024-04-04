@@ -1,0 +1,6 @@
+﻿psyplot.project.plot.vertical\_transect
+=======================================
+
+.. currentmodule:: psyplot.project
+
+.. autoattribute:: plot.vertical_transect

@@ -1,0 +1,6 @@
+﻿psyplot.project.plot.horizontal\_mapvectortransect
+==================================================
+
+.. currentmodule:: psyplot.project
+
+.. autoattribute:: plot.horizontal_mapvectortransect

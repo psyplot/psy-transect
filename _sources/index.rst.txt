@@ -23,10 +23,9 @@ Welcome to psy-transect's documentation!
 
 .. warning::
 
-    This page has been automatically generated as has not yet been reviewed by
-    the authors of psy-transect!
-    Stay tuned for updates and discuss with us at
-    https://codebase.helmholtz.cloud/psyplot/psy-transect
+    ``psy-transect`` is a new and not yet much tested package. We hope that it
+    is useful for your work and we are looking forward to any kind of feedback
+    and/or contribution!
 
 
 .. toctree::
@@ -34,6 +33,8 @@ Welcome to psy-transect's documentation!
    :caption: Contents:
 
    installation
+   plot_methods
+   usage
    api
    contributing
 

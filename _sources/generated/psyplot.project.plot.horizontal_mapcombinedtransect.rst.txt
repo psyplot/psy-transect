@@ -1,0 +1,6 @@
+﻿psyplot.project.plot.horizontal\_mapcombinedtransect
+====================================================
+
+.. currentmodule:: psyplot.project
+
+.. autoattribute:: plot.horizontal_mapcombinedtransect

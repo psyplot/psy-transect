@@ -7,6 +7,7 @@
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="_static/nc-table-styles.css?v=d585f46f" />
+      <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
       <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
 
   
@@ -48,6 +49,35 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#installation-for-development">Installation for development</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="plot_methods.html">psyplot plot methods</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/psyplot.project.plot.vertical_transect.html">psyplot.project.plot.vertical_transect</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/psyplot.project.plot.vertical_transect.html#psyplot.project.plot.vertical_transect"><code class="docutils literal notranslate"><span class="pre">plot.vertical_transect</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="generated/psyplot.project.plot.vertical_maptransect.html">psyplot.project.plot.vertical_maptransect</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/psyplot.project.plot.vertical_maptransect.html#psyplot.project.plot.vertical_maptransect"><code class="docutils literal notranslate"><span class="pre">plot.vertical_maptransect</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="generated/psyplot.project.plot.horizontal_maptransect.html">psyplot.project.plot.horizontal_maptransect</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/psyplot.project.plot.horizontal_maptransect.html#psyplot.project.plot.horizontal_maptransect"><code class="docutils literal notranslate"><span class="pre">plot.horizontal_maptransect</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="generated/psyplot.project.plot.horizontal_mapvectortransect.html">psyplot.project.plot.horizontal_mapvectortransect</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/psyplot.project.plot.horizontal_mapvectortransect.html#psyplot.project.plot.horizontal_mapvectortransect"><code class="docutils literal notranslate"><span class="pre">plot.horizontal_mapvectortransect</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="generated/psyplot.project.plot.horizontal_mapcombinedtransect.html">psyplot.project.plot.horizontal_mapcombinedtransect</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/psyplot.project.plot.horizontal_mapcombinedtransect.html#psyplot.project.plot.horizontal_mapcombinedtransect"><code class="docutils literal notranslate"><span class="pre">plot.horizontal_mapcombinedtransect</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#standard-cosmo-clm-grid">Standard COSMO-CLM grid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#vertical-level-information">Vertical level information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#interactive-exploratory-data-analysis">Interactive exploratory data analysis</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a><ul>
@@ -123,6 +153,7 @@
  | <a href="#C"><strong>C</strong></a>
  | <a href="#D"><strong>D</strong></a>
  | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
  | <a href="#G"><strong>G</strong></a>
  | <a href="#H"><strong>H</strong></a>
  | <a href="#I"><strong>I</strong></a>
@@ -135,6 +166,8 @@
  | <a href="#T"><strong>T</strong></a>
  | <a href="#U"><strong>U</strong></a>
  | <a href="#V"><strong>V</strong></a>
+ | <a href="#X"><strong>X</strong></a>
+ | <a href="#Y"><strong>Y</strong></a>
  
 </div>
 <h2 id="A">A</h2>
@@ -148,40 +181,262 @@
         <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.allowed_dims">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.AlternativeTransectXCoord">AlternativeTransectXCoord (class in psy_transect.plotters)</a>
 </li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.arrowsize">arrowsize (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.arrowsize">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.arrowstyle">arrowstyle (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.arrowstyle">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.axiscolor">axiscolor (psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.axiscolor">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
 <h2 id="B">B</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/psy_transect.maps.html#psy_transect.maps.MapTransectMapPlot2D.bounds">bounds (psy_transect.maps.MapTransectMapPlot2D property)</a>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.background">background (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.background">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
 </li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.background">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.background">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.background">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.bounds">bounds (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.bounds">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.bounds">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.MapTransectMapPlot2D.bounds">(psy_transect.maps.MapTransectMapPlot2D property)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.bounds">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.bounds">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/psy_transect.maps.html#psy_transect.maps.MapTransectMapPlot2D.clip">clip (psy_transect.maps.MapTransectMapPlot2D property)</a>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.cbar">cbar (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.cbar">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
 </li>
-      <li><a href="api/psy_transect.maps.html#psy_transect.maps.MapTransectMapPlot2D.cmap">cmap (psy_transect.maps.MapTransectMapPlot2D property)</a>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.cbar">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
 </li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.cbar">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.cbar">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.cbarspacing">cbarspacing (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.cbarspacing">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.cbarspacing">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.cbarspacing">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.cbarspacing">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.clabel">clabel (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.clabel">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.clabel">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.clabel">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.clabel">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.clabelprops">clabelprops (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.clabelprops">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.clabelprops">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.clabelprops">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.clabelprops">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.clabelsize">clabelsize (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.clabelsize">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.clabelsize">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.clabelsize">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.clabelsize">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.clabelweight">clabelweight (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.clabelweight">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.clabelweight">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.clabelweight">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.clabelweight">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.clat">clat (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.clat">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.clat">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.clip">clip (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.clip">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.clip">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.MapTransectMapPlot2D.clip">(psy_transect.maps.MapTransectMapPlot2D property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.clon">clon (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.clon">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.clon">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.cmap">cmap (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.cmap">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.cmap">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.MapTransectMapPlot2D.cmap">(psy_transect.maps.MapTransectMapPlot2D property)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.cmap">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.cmap">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.color">color (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.color">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+      </ul></li>
       <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectPlotterMixin.connect_ax">connect_ax() (psy_transect.maps.HorizontalTransectPlotterMixin method)</a>
 
       <ul>
         <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.connect_ax">(psy_transect.plotters.VerticalTransectPlotter method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VTransform.connections">connections (psy_transect.plotters.VTransform attribute)</a>
 </li>
-      <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.coord">coord (psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+      <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.coord">coord (psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.coord">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
 </li>
+      </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.cticklabels">cticklabels (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.cticklabels">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.cticklabels">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.cticklabels">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.cticklabels">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.ctickprops">ctickprops (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.ctickprops">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.ctickprops">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.ctickprops">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.ctickprops">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.cticks">cticks (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.cticks">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.cticks">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.cticks">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.cticks">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.cticksize">cticksize (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.cticksize">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.cticksize">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.cticksize">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.cticksize">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.ctickweight">ctickweight (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.ctickweight">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.ctickweight">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.ctickweight">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.ctickweight">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -201,9 +456,19 @@
 </li>
         <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.datagrid">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
 </li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.datagrid">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.datagrid">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.density">density (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.density">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+      </ul></li>
       <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectLonLatBox.dependencies">dependencies (psy_transect.maps.HorizontalTransectLonLatBox attribute)</a>
 
       <ul>
@@ -230,12 +495,80 @@
 </li>
       <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.TransectResolution.estimated_resolution">estimated_resolution (psy_transect.plotters.TransectResolution property)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.TransectResolution.expand_path">expand_path() (psy_transect.plotters.TransectResolution method)</a>
 </li>
       <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.TransectResolution.expand_path_to_resolution">expand_path_to_resolution() (psy_transect.plotters.TransectResolution static method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.extend">extend (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.extend">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.extend">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.extend">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.extend">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.figtitle">figtitle (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.figtitle">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.figtitle">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.figtitle">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.figtitle">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.figtitleprops">figtitleprops (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.figtitleprops">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.figtitleprops">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.figtitleprops">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.figtitleprops">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.figtitlesize">figtitlesize (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.figtitlesize">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.figtitlesize">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.figtitlesize">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.figtitlesize">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.figtitleweight">figtitleweight (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.figtitleweight">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.figtitleweight">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.figtitleweight">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.figtitleweight">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -250,8 +583,6 @@
         <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.get_enhanced_attrs">(psy_transect.plotters.VerticalTransectPlotter method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/psy_transect.utils.html#psy_transect.utils.get_haversine_distance_from_start">get_haversine_distance_from_start() (in module psy_transect.utils)</a>
 </li>
       <li><a href="api/psy_transect.plugin.html#psy_transect.plugin.get_versions">get_versions() (in module psy_transect.plugin)</a>
@@ -260,20 +591,74 @@
 </li>
       <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectTranspose.get_y">get_y() (psy_transect.plotters.VerticalTransectTranspose method)</a>
 </li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.google_map_detail">google_map_detail (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.google_map_detail">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.google_map_detail">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.grid">grid (psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.grid">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.grid_color">grid_color (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.grid_color">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.grid_color">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.grid_labels">grid_labels (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.grid_labels">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.grid_labels">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.grid_labelsize">grid_labelsize (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.grid_labelsize">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.grid_labelsize">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.grid_settings">grid_settings (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.grid_settings">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.grid_settings">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
 <h2 id="H">H</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="generated/psyplot.project.plot.horizontal_mapcombinedtransect.html#psyplot.project.plot.horizontal_mapcombinedtransect">horizontal_mapcombinedtransect (psyplot.project.plot attribute)</a>
+</li>
+      <li><a href="generated/psyplot.project.plot.horizontal_maptransect.html#psyplot.project.plot.horizontal_maptransect">horizontal_maptransect (psyplot.project.plot attribute)</a>
+</li>
+      <li><a href="generated/psyplot.project.plot.horizontal_mapvectortransect.html#psyplot.project.plot.horizontal_mapvectortransect">horizontal_mapvectortransect (psyplot.project.plot attribute)</a>
+</li>
       <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransect">HorizontalTransect (class in psy_transect.maps)</a>
 </li>
       <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter">HorizontalTransectCombinedPlotter (class in psy_transect.maps)</a>
 </li>
-      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter">HorizontalTransectFieldPlotter (class in psy_transect.maps)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter">HorizontalTransectFieldPlotter (class in psy_transect.maps)</a>
+</li>
       <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectLonLatBox">HorizontalTransectLonLatBox (class in psy_transect.maps)</a>
 </li>
       <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectPlotterMixin">HorizontalTransectPlotterMixin (class in psy_transect.maps)</a>
@@ -288,8 +673,18 @@
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/psy_transect.maps.html#psy_transect.maps.MapTransectMapPlot2D.interp_bounds">interp_bounds (psy_transect.maps.MapTransectMapPlot2D property)</a>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.interp_bounds">interp_bounds (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.interp_bounds">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
 </li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.MapTransectMapPlot2D.interp_bounds">(psy_transect.maps.MapTransectMapPlot2D property)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.interp_bounds">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.interp_bounds">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/psy_transect.utils.html#psy_transect.utils.interpolate_points">interpolate_points() (in module psy_transect.utils)</a>
@@ -300,14 +695,60 @@
 <h2 id="L">L</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/psy_transect.maps.html#psy_transect.maps.MapTransectMapPlot2D.levels">levels (psy_transect.maps.MapTransectMapPlot2D property)</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.lonlatbox">lonlatbox (psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+      <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.labelprops">labelprops (psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
 
       <ul>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.labelprops">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.labelsize">labelsize (psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.labelsize">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.labelweight">labelweight (psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.labelweight">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.levels">levels (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.levels">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.MapTransectMapPlot2D.levels">(psy_transect.maps.MapTransectMapPlot2D property)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.levels">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.levels">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.linewidth">linewidth (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.linewidth">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.lonlatbox">lonlatbox (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.lonlatbox">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.lonlatbox">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
         <li><a href="api/psy_transect.maps.html#psy_transect.maps.MapTransectMapPlot2D.lonlatbox">(psy_transect.maps.MapTransectMapPlot2D property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.lsm">lsm (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.lsm">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.lsm">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -316,14 +757,118 @@
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.map_extent">map_extent (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.map_extent">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.map_extent">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+      </ul></li>
       <li><a href="api/psy_transect.maps.html#psy_transect.maps.MapTransectDataGrid">MapTransectDataGrid (class in psy_transect.maps)</a>
 </li>
       <li><a href="api/psy_transect.maps.html#psy_transect.maps.MapTransectMapPlot2D">MapTransectMapPlot2D (class in psy_transect.maps)</a>
 </li>
-      <li><a href="api/psy_transect.maps.html#psy_transect.maps.MapTransectDataGrid.mask_datagrid">mask_datagrid (psy_transect.maps.MapTransectDataGrid property)</a>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.mask">mask (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.mask">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
 </li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.mask">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.mask">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.mask">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.mask_datagrid">mask_datagrid (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.mask_datagrid">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.mask_datagrid">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.MapTransectDataGrid.mask_datagrid">(psy_transect.maps.MapTransectDataGrid property)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.mask_datagrid">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.mask_datagrid">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.maskbetween">maskbetween (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.maskbetween">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.maskbetween">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.maskbetween">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.maskbetween">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.maskgeq">maskgeq (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.maskgeq">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.maskgeq">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.maskgeq">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.maskgeq">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.maskgreater">maskgreater (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.maskgreater">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.maskgreater">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.maskgreater">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.maskgreater">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.maskleq">maskleq (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.maskleq">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.maskleq">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.maskleq">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.maskleq">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.maskless">maskless (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.maskless">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.maskless">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.maskless">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.maskless">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
       <li><a href="api/psy_transect.utils.html#psy_transect.utils.mesh_to_cf_bounds">mesh_to_cf_bounds() (in module psy_transect.utils)</a>
 </li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.miss_color">miss_color (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.miss_color">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.miss_color">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.miss_color">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
       <li>
     module
 
@@ -372,9 +917,41 @@
       <ul>
         <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.plot">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
 </li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.plot">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
         <li><a href="api/psy_transect.maps.html#psy_transect.maps.MapTransectDataGrid.plot">(psy_transect.maps.MapTransectDataGrid property)</a>
 </li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.plot">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.plot">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
       </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.post">post (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.post">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.post">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.post">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.post">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.post_timing">post_timing (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.post_timing">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.post_timing">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.post_timing">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.post_timing">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransect.priority">priority (psy_transect.maps.HorizontalTransect attribute)</a>
 
       <ul>
@@ -385,6 +962,14 @@
         <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.TransectMethod.priority">(psy_transect.plotters.TransectMethod attribute)</a>
 </li>
       </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.projection">projection (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.projection">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.projection">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+      </ul></li>
       <li>
     psy_transect
 
@@ -392,8 +977,6 @@
         <li><a href="api/psy_transect.html#module-psy_transect">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     psy_transect.maps
 
@@ -454,8 +1037,6 @@
         <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.selectors">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.sliders">sliders (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
 
       <ul>
@@ -467,10 +1048,112 @@
 </li>
       </ul></li>
   </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.stock_img">stock_img (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.stock_img">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.stock_img">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.sym_lims">sym_lims (psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.sym_lims">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
 </tr></table>
 
 <h2 id="T">T</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.text">text (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.text">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.text">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.text">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.text">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.ticksize">ticksize (psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.ticksize">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.tickweight">tickweight (psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.tickweight">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.tight">tight (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.tight">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.tight">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.tight">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.tight">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.title">title (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.title">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.title">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.title">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.title">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.titleprops">titleprops (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.titleprops">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.titleprops">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.titleprops">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.titleprops">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.titlesize">titlesize (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.titlesize">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.titlesize">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.titlesize">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.titlesize">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.titleweight">titleweight (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.titleweight">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.titleweight">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.titleweight">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.titleweight">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.Transect">Transect (class in psy_transect.plotters)</a>
 </li>
@@ -487,20 +1170,24 @@
 </li>
         <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.AlternativeTransectXCoord.transect">(psy_transect.plotters.AlternativeTransectXCoord property)</a>
 </li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.transect">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
         <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.transect">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
 </li>
       </ul></li>
       <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.Transect.transect_method">transect_method (psy_transect.plotters.Transect property)</a>
 
       <ul>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.transect_method">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
         <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.transect_method">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.Transect.transect_resolution">transect_resolution (psy_transect.plotters.Transect property)</a>
 
       <ul>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.transect_resolution">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
         <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.transect_resolution">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
 </li>
       </ul></li>
@@ -508,9 +1195,15 @@
 </li>
       <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.TransectResolution">TransectResolution (class in psy_transect.plotters)</a>
 </li>
-      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectLonLatBox.transform">transform (psy_transect.maps.HorizontalTransectLonLatBox property)</a>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.transform">transform (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
 
       <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.transform">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectLonLatBox.transform">(psy_transect.maps.HorizontalTransectLonLatBox property)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.transform">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
         <li><a href="api/psy_transect.maps.html#psy_transect.maps.MapTransectDataGrid.transform">(psy_transect.maps.MapTransectDataGrid property)</a>
 </li>
         <li><a href="api/psy_transect.maps.html#psy_transect.maps.MapTransectMapPlot2D.transform">(psy_transect.maps.MapTransectMapPlot2D property)</a>
@@ -518,9 +1211,17 @@
         <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.transform">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectLonLatBox.transpose">transpose (psy_transect.maps.HorizontalTransectLonLatBox property)</a>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.transpose">transpose (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
 
       <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.transpose">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectLonLatBox.transpose">(psy_transect.maps.HorizontalTransectLonLatBox property)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.transpose">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.transpose">(psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+</li>
         <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.transpose">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
 </li>
       </ul></li>
@@ -560,18 +1261,154 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/psy_transect.plugin.html#psy_transect.plugin.validate_points">validate_points() (in module psy_transect.plugin)</a>
 </li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.vbounds">vbounds (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+</li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.vcbar">vcbar (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+</li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.vcbarspacing">vcbarspacing (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+</li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.vclabel">vclabel (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+</li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.vclabelprops">vclabelprops (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+</li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.vclabelsize">vclabelsize (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+</li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.vclabelweight">vclabelweight (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+</li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.vcmap">vcmap (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+</li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.vcticklabels">vcticklabels (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+</li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.vctickprops">vctickprops (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.vcticks">vcticks (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+</li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.vcticksize">vcticksize (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+</li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.vctickweight">vctickweight (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+</li>
+      <li><a href="generated/psyplot.project.plot.vertical_maptransect.html#psyplot.project.plot.vertical_maptransect">vertical_maptransect (psyplot.project.plot attribute)</a>
+</li>
+      <li><a href="generated/psyplot.project.plot.vertical_transect.html#psyplot.project.plot.vertical_transect">vertical_transect (psyplot.project.plot attribute)</a>
+</li>
       <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter">VerticalMapTransectPlotter (class in psy_transect.plotters)</a>
 </li>
       <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter">VerticalTransectPlotter (class in psy_transect.plotters)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectTranspose">VerticalTransectTranspose (class in psy_transect.plotters)</a>
+</li>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.vplot">vplot (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
 </li>
       <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.vtransect">vtransect (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
 </li>
       <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VTransform">VTransform (class in psy_transect.plotters)</a>
 </li>
+  </ul></td>
+</tr></table>
+
+<h2 id="X">X</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.xgrid">xgrid (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.xgrid">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.xgrid">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.xlabel">xlabel (psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.xlabel">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.xlim">xlim (psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.xlim">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.xrotation">xrotation (psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.xrotation">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.xticklabels">xticklabels (psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.xticklabels">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.xtickprops">xtickprops (psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.xtickprops">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.xticks">xticks (psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.xticks">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="Y">Y</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectCombinedPlotter.ygrid">ygrid (psy_transect.maps.HorizontalTransectCombinedPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectFieldPlotter.ygrid">(psy_transect.maps.HorizontalTransectFieldPlotter attribute)</a>
+</li>
+        <li><a href="api/psy_transect.maps.html#psy_transect.maps.HorizontalTransectVectorPlotter.ygrid">(psy_transect.maps.HorizontalTransectVectorPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.ylabel">ylabel (psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.ylabel">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.ylim">ylim (psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.ylim">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.yrotation">yrotation (psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.yrotation">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.yticklabels">yticklabels (psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.yticklabels">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.ytickprops">ytickprops (psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.ytickprops">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalMapTransectPlotter.yticks">yticks (psy_transect.plotters.VerticalMapTransectPlotter attribute)</a>
+
+      <ul>
+        <li><a href="api/psy_transect.plotters.html#psy_transect.plotters.VerticalTransectPlotter.yticks">(psy_transect.plotters.VerticalTransectPlotter attribute)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 

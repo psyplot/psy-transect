@@ -8,6 +8,7 @@
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="_static/nc-table-styles.css?v=d585f46f" />
+      <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
       <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
 
   
@@ -24,7 +25,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="API Reference" href="api.html" />
+    <link rel="next" title="psyplot plot methods" href="plot_methods.html" />
     <link rel="prev" title="Welcome to psy-transect’s documentation!" href="index.html" /> 
 </head>
 
@@ -51,6 +52,35 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#installation-for-development">Installation for development</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="plot_methods.html">psyplot plot methods</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/psyplot.project.plot.vertical_transect.html">psyplot.project.plot.vertical_transect</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/psyplot.project.plot.vertical_transect.html#psyplot.project.plot.vertical_transect"><code class="docutils literal notranslate"><span class="pre">plot.vertical_transect</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="generated/psyplot.project.plot.vertical_maptransect.html">psyplot.project.plot.vertical_maptransect</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/psyplot.project.plot.vertical_maptransect.html#psyplot.project.plot.vertical_maptransect"><code class="docutils literal notranslate"><span class="pre">plot.vertical_maptransect</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="generated/psyplot.project.plot.horizontal_maptransect.html">psyplot.project.plot.horizontal_maptransect</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/psyplot.project.plot.horizontal_maptransect.html#psyplot.project.plot.horizontal_maptransect"><code class="docutils literal notranslate"><span class="pre">plot.horizontal_maptransect</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="generated/psyplot.project.plot.horizontal_mapvectortransect.html">psyplot.project.plot.horizontal_mapvectortransect</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/psyplot.project.plot.horizontal_mapvectortransect.html#psyplot.project.plot.horizontal_mapvectortransect"><code class="docutils literal notranslate"><span class="pre">plot.horizontal_mapvectortransect</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="generated/psyplot.project.plot.horizontal_mapcombinedtransect.html">psyplot.project.plot.horizontal_mapcombinedtransect</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/psyplot.project.plot.horizontal_mapcombinedtransect.html#psyplot.project.plot.horizontal_mapcombinedtransect"><code class="docutils literal notranslate"><span class="pre">plot.horizontal_mapcombinedtransect</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#standard-cosmo-clm-grid">Standard COSMO-CLM grid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#vertical-level-information">Vertical level information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#interactive-exploratory-data-analysis">Interactive exploratory data analysis</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a><ul>
@@ -120,13 +150,8 @@
              
   <section id="installation">
 <span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically generated as has not yet been reviewed by the
-authors of psy-transect!</p>
-</div>
 <p>To install the <cite>psy-transect</cite> package, we recommend that
-you first install the <a class="reference external" href="https://pangeo-pyinterp.readthedocs.io/en/latest/setup/build.html#requirements" title="(in pyinterp v2023.5.0)"><span class="xref std std-ref">requirements for pyinterp</span></a>
+you first install the <a class="reference external" href="https://pangeo-pyinterp.readthedocs.io/en/latest/setup/build.html#requirements" title="(in pyinterp v2024.2.0.dev7)"><span class="xref std std-ref">requirements for pyinterp</span></a>
 and then install it from PyPi via:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">psy</span><span class="o">-</span><span class="n">transect</span>
 </pre></div>
@@ -155,7 +180,7 @@ SPDX-License-Identifier: CC-BY-4.0
 
 <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="Welcome to psy-transect’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="api.html" class="btn btn-neutral float-right" title="API Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="plot_methods.html" class="btn btn-neutral float-right" title="psyplot plot methods" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
