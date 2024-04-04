@@ -24,7 +24,7 @@
       "package_folder": "psy_transect",
       "project_short_description": "Psyplot plugin for visualizing data along a transect",
       "keywords": "visualization,psyplot,ugrid,cf,climate models,vertical transect,earth system sciences,scikit-learn,pyinterp",
-      "documentation_url": "https://psyplot.github.io/psy-transect",
+      "documentation_url": "https://psyplot.github.io/psy-transect/",
       "use_markdown_for_documentation": "no",
       "ci_build_stage": "no",
       "use_cibuildwheel": "no",

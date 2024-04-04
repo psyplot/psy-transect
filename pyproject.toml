@@ -58,7 +58,7 @@ dependencies = [
 
 [project.urls]
 Homepage = 'https://codebase.helmholtz.cloud/psyplot/psy-transect'
-Documentation = "https://psyplot.github.io/psy-transect"
+Documentation = "https://psyplot.github.io/psy-transect/"
 Source = "https://codebase.helmholtz.cloud/psyplot/psy-transect"
 Tracker = "https://codebase.helmholtz.cloud/psyplot/psy-transect/issues/"
 
